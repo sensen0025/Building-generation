@@ -1,0 +1,5 @@
+supervisor start; current step 138000
+[2026-09-06 23:13:07] training dead at step 138000, relaunching
+pruned denoiser_ema0.9999_step0128000.pt
+pruned denoiser_step0128000.pt
+pruned misc_step0128000.pt

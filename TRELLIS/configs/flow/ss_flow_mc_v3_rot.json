@@ -1,0 +1,78 @@
+{
+    "models": {
+        "denoiser": {
+            "name": "SparseStructureFlowModel",
+            "args": {
+                "resolution": 16,
+                "in_channels": 8,
+                "out_channels": 8,
+                "model_channels": 512,
+                "cond_channels": 1024,
+                "num_blocks": 8,
+                "num_heads": 8,
+                "num_head_channels": 64,
+                "mlp_ratio": 4,
+                "patch_size": 2,
+                "pe_mode": "ape",
+                "use_fp16": false
+            }
+        }
+    },
+    "dataset": {
+        "name": "MCFlowImageDataset",
+        "args": {
+            "latent_npy": "/home/linux/redstone_ai/dataset/v2/ss_latent_mc64_v2_rot.npy",
+            "image_dir": "/home/linux/redstone_ai/render_output_rot",
+            "image_size": 518,
+            "normalize": {
+                "mean": [0.19740082323551178, -0.13484378159046173, -0.11383765190839767, 0.7451473474502563, -0.11560236662626266, -0.4551982581615448, -0.27510982751846313, -0.011838572099804878],
+                "std": [2.209801197052002, 2.0285537242889404, 2.1106173992156982, 2.9928479194641113, 1.9292527437210083, 2.247657299041748, 2.070413827896118, 1.8832718133926392]
+            }
+        }
+    },
+    "trainer": {
+        "name": "DenseImageFlowMatchingCFGTrainer",
+        "args": {
+            "max_steps": 400000,
+            "batch_size_per_gpu": 4,
+            "batch_split": 1,
+            "optimizer": {
+                "name": "AdamW",
+                "args": {
+                    "lr": 0.00005,
+                    "weight_decay": 0.0
+                }
+            },
+            "lr_scheduler": {
+                "name": "CosineAnnealingLR",
+                "args": {
+                    "T_max": 400000,
+                    "eta_min": 0.0
+                }
+            },
+            "ema_rate": [0.9999],
+            "fp16_mode": null,
+            "fp16_scale_growth": 0.001,
+            "grad_clip": {
+                "name": "AdaptiveGradClipper",
+                "args": {
+                    "max_norm": 1.0,
+                    "clip_percentile": 95
+                }
+            },
+            "i_log": 100,
+            "i_sample": 1000000,
+            "i_save": 2000,
+            "p_uncond": 0.1,
+            "image_cond_model": "facebook/dinov2-large",
+            "t_schedule": {
+                "name": "logitNormal",
+                "args": {
+                    "mean": 0.0,
+                    "std": 1.0
+                }
+            },
+            "sigma_min": 1e-05
+        }
+    }
+}

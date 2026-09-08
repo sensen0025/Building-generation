@@ -1,0 +1,91 @@
+{
+  "models": {
+    "denoiser": {
+      "name": "SparseStructureFlowModel",
+      "args": {
+        "resolution": 16,
+        "in_channels": 8,
+        "out_channels": 8,
+        "model_channels": 512,
+        "cond_channels": 1024,
+        "num_blocks": 8,
+        "num_heads": 8,
+        "num_head_channels": 64,
+        "mlp_ratio": 4,
+        "patch_size": 2,
+        "pe_mode": "ape",
+        "use_fp16": false
+      }
+    }
+  },
+  "dataset": {
+    "name": "MCFlowImageDataset",
+    "args": {
+      "latent_npy": "/home/linux/redstone_ai/dataset/v2/ss_latent_mc64_v2.npy",
+      "image_dir": "/home/linux/redstone_ai/render_output",
+      "image_size": 518,
+      "normalize": {
+        "mean": [
+          -0.13099966943264008,
+          -0.14538758993148804,
+          -0.15902164578437805,
+          -0.1572021096944809,
+          -0.1499953716993332,
+          -0.12601788341999054,
+          -0.08675840497016907,
+          -0.19102469086647034
+        ],
+        "std": [
+          2.315962314605713,
+          2.1381547451019287,
+          1.9493612051010132,
+          1.8280974626541138,
+          1.826555848121643,
+          1.9160739183425903,
+          2.101046562194824,
+          2.25778865814209
+        ]
+      }
+    }
+  },
+  "trainer": {
+    "name": "DenseImageFlowMatchingCFGTrainer",
+    "args": {
+      "max_steps": 200000,
+      "batch_size_per_gpu": 4,
+      "batch_split": 1,
+      "optimizer": {
+        "name": "AdamW",
+        "args": {
+          "lr": 0.0001,
+          "weight_decay": 0.0
+        }
+      },
+      "ema_rate": [
+        0.9999
+      ],
+      "fp16_mode": null,
+      "fp16_scale_growth": 0.001,
+      "grad_clip": {
+        "name": "AdaptiveGradClipper",
+        "args": {
+          "max_norm": 1.0,
+          "clip_percentile": 95
+        }
+      },
+      "i_log": 100,
+      "i_sample": 1000000,
+      "i_save": 2000,
+      "p_uncond": 0.1,
+      "image_cond_model": "facebook/dinov2-large",
+      "t_schedule": {
+        "name": "logitNormal",
+        "args": {
+          "mean": 0.0,
+          "std": 1.0
+        }
+      },
+      "sigma_min": 1e-05
+    }
+  }
+}

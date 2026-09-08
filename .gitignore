@@ -1,0 +1,51 @@
+# ---- big data / renders / outputs (never commit) ----
+dataset/
+render_output/
+render_output_rot/
+render_output_placeholder_bak/
+render_mc/
+gen_outputs/
+TRELLIS/outputs/
+TRELLIS/data/
+TRELLIS/.cache/
+gradle-*/
+node-v*/
+anaconda3/
+
+# ---- binary / model / asset files ----
+*.pt
+*.pth
+*.ckpt
+*.onnx
+*.npy
+*.npz
+*.litematic
+*.rhb
+*.png
+*.jpg
+*.jpeg
+*.gif
+*.webp
+*.zip
+*.tar
+*.gz
+*.7z
+*.rar
+*.jar
+*.log
+
+# ---- python / build caches ----
+__pycache__/
+*.pyc
+*.pyo
+*.pyc.*
+.DS_Store
+node_modules/
+build/
+dist/
+*.egg-info/
+
+# ---- secrets / keys ----
+*.pem
+*.key
+*.pub

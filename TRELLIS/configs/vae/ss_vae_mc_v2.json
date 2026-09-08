@@ -1,0 +1,72 @@
+{
+    "models": {
+        "encoder": {
+            "name": "SparseStructureEncoder",
+            "args": {
+                "in_channels": 128,
+                "latent_channels": 8,
+                "num_res_blocks": 2,
+                "num_res_blocks_middle": 2,
+                "channels": [32, 128, 512],
+                "use_fp16": true
+            }
+        },
+        "decoder": {
+            "name": "SparseStructureDecoder",
+            "args": {
+                "out_channels": 163,
+                "latent_channels": 8,
+                "num_res_blocks": 2,
+                "num_res_blocks_middle": 2,
+                "channels": [512, 128, 32],
+                "use_fp16": true
+            }
+        }
+    },
+    "dataset": {
+        "name": "SparseStructure",
+        "args": {
+            "resolution": 64,
+            "min_aesthetic_score": 4.5,
+            "num_classes": 128,
+            "state_npy": "/home/linux/redstone_ai/dataset/v2/ss64_state.npy"
+        }
+    },
+    "trainer": {
+        "name": "SparseStructureVaeTrainer",
+        "args": {
+            "max_steps": 50000,
+            "batch_size_per_gpu": 4,
+            "batch_split": 1,
+            "optimizer": {
+                "name": "AdamW",
+                "args": {
+                    "lr": 1e-4,
+                    "weight_decay": 0.0
+                }
+            },
+            "ema_rate": [
+                0.9999
+            ],
+            "fp16_mode": "inflat_all",
+            "fp16_scale_growth": 0.001,
+            "grad_clip": {
+                "name": "AdaptiveGradClipper",
+                "args": {
+                    "max_norm": 1.0,
+                    "clip_percentile": 95
+                }
+            },
+            "i_log": 100,
+            "i_sample": 1000000,
+            "i_save": 1000,
+            "loss_type": "ce",
+            "num_classes": 128,
+            "class_weights": "/home/linux/redstone_ai/dataset/v2/class_weights.npy",
+            "lambda_kl": 0.001,
+            "state_field_dims": [7, 3, 6, 16, 3],
+            "lambda_state": 1.0,
+            "state_class_list": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62]
+        }
+    }
+}
