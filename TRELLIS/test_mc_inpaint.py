@@ -1,3 +1,4 @@
+from mcfix.legacy import legacy_state_classes
 import os
 os.environ.setdefault('ATTN_BACKEND', 'sdpa')
 import tempfile
@@ -154,7 +155,7 @@ class InpaintTests(unittest.TestCase):
                 return torch.zeros(2, 163, 16, 16, 16)
         states = torch.ones_like(self.blocks)
         b, s = sample_completion(Model(), Decoder(), self.x, torch.ones(2, 3, 16),
-                                 self.blocks, self.mask, states, [0] * 8, [1] * 8, steps=2)
+                                 self.blocks, self.mask, states, [0] * 8, [1] * 8, steps=2, state_classes=legacy_state_classes())
         self.assertEqual(len(calls), 4)
         self.assertTrue(all(c['known_mask'] is self.mask for c in calls))
         self.assertTrue(torch.equal(b[self.mask], self.blocks[self.mask]))

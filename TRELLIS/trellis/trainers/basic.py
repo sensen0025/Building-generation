@@ -296,6 +296,13 @@ class BasicTrainer(Trainer):
                     print(f'Warning: {name} not found in finetune_ckpt, skipped.')
                 model_ckpts[name] = model_state_dict
         self._state_dicts_to_master_params(self.master_params, model_ckpts)
+        # EMA is constructed before finetune weights are loaded. Seed every
+        # shadow from the loaded master parameters, not random initialization.
+        if self.is_master:
+            for ema_params in self.ema_params:
+                with torch.no_grad():
+                    for ema_param, master_param in zip(ema_params, self.master_params):
+                        ema_param.copy_(master_param)
         del model_ckpts
 
         if self.world_size > 1:

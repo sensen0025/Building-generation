@@ -41,12 +41,18 @@ class VoxelConditioner(nn.Module):
         if known_blocks.is_floating_point():
             raise ValueError('known_blocks must contain integer class IDs')
         ids = torch.where(known_mask, known_blocks.long(), 0)
+        if ((ids < 0) | (ids >= self.blocks.num_embeddings)).any():
+            raise ValueError('Known block ID out of range')
         features = self.blocks(ids)
         if known_states is None:
             known_states = torch.zeros_like(ids)
         if known_states.shape != ids.shape or known_states.is_floating_point():
             raise ValueError('known_states must be integer packed states matching blocks')
+        if known_states.device != x.device:
+            raise ValueError('Known states must be on model device')
         packed = torch.where(known_mask, known_states.long(), 0)
+        if ((packed < 0) | (packed >= math.prod(self.state_dims))).any():
+            raise ValueError('Known packed state out of range')
         # States use the same mixed-radix encoding as SparseStructureVaeTrainer.
         multiplier = 1
         for dim, embedding in zip(self.state_dims, self.states):

@@ -1,0 +1,54 @@
+{
+  "status": "experimental_generation",
+  "geometry_config": "/data/redstone_v5/geometry_data/config.json",
+  "geometry_checkpoint": "/data/redstone_v5/geometry_ema_fixed/ckpts/denoiser_ema0.9999_step0001000.pt",
+  "state_checkpoint": "/data/redstone_v5/state/best.pt",
+  "decoder_checkpoint": "/home/linux/redstone_ai/TRELLIS/outputs/ss_vae_mc_v2/ckpts/decoder_step0050000.pt",
+  "dataset_manifest": "/data/redstone_v5/dataset/manifest.json",
+  "dataset_sha256": "80c81c60fd9fc293c0829577cbc644a9f0c9c6ea90911bc8153a6c804db81370",
+  "state_validation": {
+    "step": 3000,
+    "state_accuracy": 0.7342054558361221,
+    "default_accuracy": 0.6387452252983132,
+    "state_ce": 0.8650245970342741,
+    "evaluated_cells": 29583
+  },
+  "geometry_validation_class_accuracy": {
+    "baseline": 0.059716731977412216,
+    "corrected": 0.06271927818656592
+  },
+  "test_evaluation": "/data/redstone_v5/test_final_eval.json",
+  "scope": "128-class geometry with independent full registered states; source unsupported states retained separately",
+  "geometry_quality": "experimental; end-to-end metrics must be reviewed separately",
+  "repair_status": "complete",
+  "geometry_candidates": [
+    {
+      "name": "baseline",
+      "config": "/data/redstone_v4/work/ss_flow_mc_v4_rotfix_cont.json",
+      "checkpoint": "/data/redstone_v5/backup_20260913/ckpts/denoiser_ema0.9999_step0032000.pt",
+      "evaluation": "/data/redstone_v5/geometry_base_eval.json",
+      "class_accuracy": 0.059716731977412216,
+      "occupancy_iou": 0.21012377594403367
+    },
+    {
+      "name": "ema",
+      "config": "/data/redstone_v5/geometry_data/config.json",
+      "checkpoint": "/data/redstone_v5/geometry_ema_fixed/ckpts/denoiser_ema0.9999_step0001000.pt",
+      "evaluation": "/data/redstone_v5/geometry_fixed_ema_eval.json",
+      "class_accuracy": 0.06271927818656592,
+      "occupancy_iou": 0.21204922621592598
+    },
+    {
+      "name": "raw",
+      "config": "/data/redstone_v5/geometry_data/config.json",
+      "checkpoint": "/data/redstone_v5/geometry_ema_fixed/ckpts/denoiser_step0001000.pt",
+      "evaluation": "/data/redstone_v5/geometry_fixed_raw_eval.json",
+      "class_accuracy": 0.05697575593319948,
+      "occupancy_iou": 0.21890360504580736
+    }
+  ],
+  "geometry_selection": "highest mean unknown class accuracy on eight validation source groups",
+  "state_quality": "validated_on_given_geometry",
+  "ema_finetune_implementation_sha256": "a797da7d3e7e7ecbdc30f7c6835f16417b584a57be3a888b9d223f5b67e210f2",
+  "previous_incorrect_ema_evaluation": "/data/redstone_v5/geometry_new_eval.json"
+}

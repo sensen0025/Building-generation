@@ -49,7 +49,8 @@ class DenseImageFlowMatchingCFGTrainer(ClassifierFreeGuidanceMixin, FlowMatching
             self._init_image_cond_model()
         mean = torch.tensor([0.485, 0.456, 0.406], device=image.device).view(1, 3, 1, 1)
         std = torch.tensor([0.229, 0.224, 0.225], device=image.device).view(1, 3, 1, 1)
-        x = (image - mean) / std
+        from mcfix.images import normalize_image
+        x = normalize_image(image)
         feats = self.image_cond_model(x).last_hidden_state  # [B, 1+S, 1024]
         return feats
 
@@ -133,7 +134,7 @@ class DenseImageFlowMatchingCFGTrainer(ClassifierFreeGuidanceMixin, FlowMatching
                 self._init_image_cond_model()
             mean = torch.tensor([0.485, 0.456, 0.406], device=cond.device).view(1, 3, 1, 1)
             std = torch.tensor([0.229, 0.224, 0.225], device=cond.device).view(1, 3, 1, 1)
-            feats = self.image_cond_model((cond - mean) / std).last_hidden_state
+            feats = self.image_cond_model(__import__('mcfix.images', fromlist=['normalize_image']).normalize_image(cond)).last_hidden_state
             # 用 cond 图像本身作为可视化 (samples 存 cond 图)
             conds.append(cond)
         sample_dict = {

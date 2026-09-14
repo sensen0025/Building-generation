@@ -1,0 +1,277 @@
+{
+ "summary": {
+  "correct_img": {
+   "mean_iou": 0.1803,
+   "n": 12,
+   "mean_solid": 23827,
+   "mean_gt_solid": 13941
+  },
+  "zero_cond": {
+   "mean_iou": 0.0716,
+   "n": 12,
+   "mean_solid": 14963,
+   "mean_gt_solid": 13941
+  },
+  "wrong_img": {
+   "mean_iou": 0.0496,
+   "n": 12,
+   "mean_solid": 23827,
+   "mean_gt_solid": 13941
+  }
+ },
+ "ckpt": "/data/redstone_v4/out_v4/ckpts/denoiser_ema0.9999_step0200000.pt",
+ "rows": [
+  {
+   "j": 5076,
+   "cond": "correct_img",
+   "iou": 0.3324,
+   "solid": 18606,
+   "gt_solid": 11612
+  },
+  {
+   "j": 5076,
+   "cond": "wrong_img",
+   "iou": 0.0402,
+   "solid": 35271,
+   "gt_solid": 11612
+  },
+  {
+   "j": 5076,
+   "cond": "zero_cond",
+   "iou": 0.077,
+   "solid": 14963,
+   "gt_solid": 11612
+  },
+  {
+   "j": 3774,
+   "cond": "correct_img",
+   "iou": 0.1997,
+   "solid": 35271,
+   "gt_solid": 17720
+  },
+  {
+   "j": 3774,
+   "cond": "wrong_img",
+   "iou": 0.0411,
+   "solid": 25927,
+   "gt_solid": 17720
+  },
+  {
+   "j": 3774,
+   "cond": "zero_cond",
+   "iou": 0.1039,
+   "solid": 14963,
+   "gt_solid": 17720
+  },
+  {
+   "j": 3760,
+   "cond": "correct_img",
+   "iou": 0.0879,
+   "solid": 25927,
+   "gt_solid": 18569
+  },
+  {
+   "j": 3760,
+   "cond": "wrong_img",
+   "iou": 0.082,
+   "solid": 21619,
+   "gt_solid": 18569
+  },
+  {
+   "j": 3760,
+   "cond": "zero_cond",
+   "iou": 0.0657,
+   "solid": 14963,
+   "gt_solid": 18569
+  },
+  {
+   "j": 3275,
+   "cond": "correct_img",
+   "iou": 0.1292,
+   "solid": 21619,
+   "gt_solid": 15870
+  },
+  {
+   "j": 3275,
+   "cond": "wrong_img",
+   "iou": 0.0913,
+   "solid": 23361,
+   "gt_solid": 15870
+  },
+  {
+   "j": 3275,
+   "cond": "zero_cond",
+   "iou": 0.0663,
+   "solid": 14963,
+   "gt_solid": 15870
+  },
+  {
+   "j": 5837,
+   "cond": "correct_img",
+   "iou": 0.1486,
+   "solid": 23361,
+   "gt_solid": 12242
+  },
+  {
+   "j": 5837,
+   "cond": "wrong_img",
+   "iou": 0.0441,
+   "solid": 5934,
+   "gt_solid": 12242
+  },
+  {
+   "j": 5837,
+   "cond": "zero_cond",
+   "iou": 0.0408,
+   "solid": 14963,
+   "gt_solid": 12242
+  },
+  {
+   "j": 3111,
+   "cond": "correct_img",
+   "iou": 0.3379,
+   "solid": 5934,
+   "gt_solid": 3740
+  },
+  {
+   "j": 3111,
+   "cond": "wrong_img",
+   "iou": 0.0303,
+   "solid": 33173,
+   "gt_solid": 3740
+  },
+  {
+   "j": 3111,
+   "cond": "zero_cond",
+   "iou": 0.074,
+   "solid": 14963,
+   "gt_solid": 3740
+  },
+  {
+   "j": 5266,
+   "cond": "correct_img",
+   "iou": 0.0401,
+   "solid": 33173,
+   "gt_solid": 16150
+  },
+  {
+   "j": 5266,
+   "cond": "wrong_img",
+   "iou": 0.0171,
+   "solid": 14421,
+   "gt_solid": 16150
+  },
+  {
+   "j": 5266,
+   "cond": "zero_cond",
+   "iou": 0.0108,
+   "solid": 14963,
+   "gt_solid": 16150
+  },
+  {
+   "j": 5891,
+   "cond": "correct_img",
+   "iou": 0.4661,
+   "solid": 14421,
+   "gt_solid": 9446
+  },
+  {
+   "j": 5891,
+   "cond": "wrong_img",
+   "iou": 0.051,
+   "solid": 39325,
+   "gt_solid": 9446
+  },
+  {
+   "j": 5891,
+   "cond": "zero_cond",
+   "iou": 0.1497,
+   "solid": 14963,
+   "gt_solid": 9446
+  },
+  {
+   "j": 3229,
+   "cond": "correct_img",
+   "iou": 0.0774,
+   "solid": 39325,
+   "gt_solid": 19545
+  },
+  {
+   "j": 3229,
+   "cond": "wrong_img",
+   "iou": 0.0446,
+   "solid": 19028,
+   "gt_solid": 19545
+  },
+  {
+   "j": 3229,
+   "cond": "zero_cond",
+   "iou": 0.0389,
+   "solid": 14963,
+   "gt_solid": 19545
+  },
+  {
+   "j": 5826,
+   "cond": "correct_img",
+   "iou": 0.0198,
+   "solid": 19028,
+   "gt_solid": 18152
+  },
+  {
+   "j": 5826,
+   "cond": "wrong_img",
+   "iou": 0.0479,
+   "solid": 22153,
+   "gt_solid": 18152
+  },
+  {
+   "j": 5826,
+   "cond": "zero_cond",
+   "iou": 0.0416,
+   "solid": 14963,
+   "gt_solid": 18152
+  },
+  {
+   "j": 5393,
+   "cond": "correct_img",
+   "iou": 0.0772,
+   "solid": 22153,
+   "gt_solid": 10406
+  },
+  {
+   "j": 5393,
+   "cond": "wrong_img",
+   "iou": 0.037,
+   "solid": 27108,
+   "gt_solid": 10406
+  },
+  {
+   "j": 5393,
+   "cond": "zero_cond",
+   "iou": 0.0237,
+   "solid": 14963,
+   "gt_solid": 10406
+  },
+  {
+   "j": 5919,
+   "cond": "correct_img",
+   "iou": 0.2472,
+   "solid": 27108,
+   "gt_solid": 13846
+  },
+  {
+   "j": 5919,
+   "cond": "wrong_img",
+   "iou": 0.0681,
+   "solid": 18606,
+   "gt_solid": 13846
+  },
+  {
+   "j": 5919,
+   "cond": "zero_cond",
+   "iou": 0.1667,
+   "solid": 14963,
+   "gt_solid": 13846
+  }
+ ]
+}

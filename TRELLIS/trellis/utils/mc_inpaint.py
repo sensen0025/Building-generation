@@ -4,31 +4,8 @@ import torch
 
 
 def sample_known_mask(blocks, up_axis=1, rng=None):
-    """Mix foundations, side overlaps and box holes; True includes known air."""
-    rng = rng if rng is not None else np.random
-    if blocks.ndim != 3 or min(blocks.shape) < 2 or up_axis not in (0, 1, 2):
-        raise ValueError('Expected a 3D block grid and up_axis in 0..2')
-    mask = np.zeros(blocks.shape, dtype=bool)
-    coords = np.argwhere(blocks != 0)
-    low = coords.min(0) if len(coords) else np.zeros(3, dtype=int)
-    high = coords.max(0) + 1 if len(coords) else np.array(blocks.shape)
-    mode = int(rng.choice(3))
-    if mode < 2:
-        axis = up_axis if mode == 0 else int(rng.choice([a for a in range(3) if a != up_axis]))
-        cut = int(low[axis] + rng.uniform(0.25, 0.7) * (high[axis] - low[axis]))
-        cut = int(np.clip(cut, 1, blocks.shape[axis] - 1))
-        region = [slice(None)] * 3
-        region[axis] = slice(0, cut) if mode == 0 or rng.random() < 0.5 else slice(cut, None)
-        mask[tuple(region)] = True
-    else:
-        mask[:] = True
-        hole = []
-        for axis, size in enumerate(blocks.shape):
-            width = max(1, int((high[axis] - low[axis]) * rng.uniform(0.35, 0.75)))
-            start = int(rng.randint(int(low[axis]), max(int(low[axis]) + 1, int(high[axis]) - width + 1)))
-            hole.append(slice(start, min(size, start + width)))
-        mask[tuple(hole)] = False
-    return mask
+    from mcfix.learning_data import sample_known_mask as shared_mask
+    return shared_mask(blocks, up_axis, rng)
 
 
 def preserve_known(pred_blocks, pred_states, known_blocks, known_states, known_mask):
@@ -45,8 +22,10 @@ def preserve_known(pred_blocks, pred_states, known_blocks, known_states, known_m
 def sample_completion(model, decoder, noise, cond, known_blocks, known_mask,
                       known_states, latent_mean, latent_std, steps=50,
                       cfg_strength=1.5, num_classes=128,
-                      state_dims=(7, 3, 6, 16, 3), state_classes=tuple(range(1, 63))):
+                      state_dims=(7, 3, 6, 16, 3), state_classes=None):
     """cond is encoded image tokens; pass zero tokens for block-only generation."""
+    if state_classes is None:
+        raise ValueError('Pass state_classes from the decoder training metadata; use mcfix.pipeline for full states')
     from ..pipelines.samplers.flow_euler import FlowEulerCfgSampler
     result = FlowEulerCfgSampler(1e-5).sample(
         model, noise, cond, torch.zeros_like(cond), steps=steps,

@@ -11,6 +11,15 @@ TRELLIS/.cache/
 gradle-*/
 node-v*/
 anaconda3/
+litematics/
+renders/
+smoke_*/
+geometry_data/
+geometry_*/
+state/
+backup_*/
+production_backup/
+thinclient_drives/
 
 # ---- binary / model / asset files ----
 *.pt
@@ -19,6 +28,7 @@ anaconda3/
 *.onnx
 *.npy
 *.npz
+*.dat
 *.litematic
 *.rhb
 *.png
@@ -33,6 +43,11 @@ anaconda3/
 *.rar
 *.jar
 *.log
+*.out
+*.bak*
+
+# ---- large manifests ----
+*manifest*.json
 
 # ---- python / build caches ----
 __pycache__/

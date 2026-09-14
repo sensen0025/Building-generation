@@ -1,0 +1,22 @@
+{
+  "name": "_schem_render",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "puppeteer": "^25.10.0",
+    "schematic-renderer": "^1.6.1",
+    "three": "^0.184.0"
+  },
+  "devDependencies": {
+    "@rolldown/binding-linux-x64-gnu": "^1.2.7",
+    "vite": "^8.2.2"
+  }
+}

@@ -168,7 +168,7 @@ for idx in IDXS:
     gt_fields = [(gtv // FIELD_MULT[f]) % STATE_DIMS[f] for f in range(5)]
     print(f'\n=== idx {idx}: GT occ={(gt>0).mean()*100:.2f}% bbox={bbox(gt)} ===', flush=True)
     best = None
-    for seed in range(3):
+    for seed in range(int(os.environ.get('SEEDS', '3'))):
         vox, fields = gen_from_image(idx, seed=seed)
         inter = ((gt > 0) & (vox > 0)).sum(); union = ((gt > 0) | (vox > 0)).sum()
         iou = inter / max(union, 1)

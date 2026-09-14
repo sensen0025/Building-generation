@@ -1,0 +1,61 @@
+{
+ "src": "/data/redstone_v4/train/ss64_state_all.npy",
+ "dst": "/data/redstone_v4/train/ss64_state_all_rotfix.npy",
+ "slots": 45604,
+ "changed_cells": 25891116,
+ "schema": "o + 7*(v + 3*(sh + 6*(hz + 16*ac)))",
+ "direction_map": "d_new=(-dz,dy,dx): north->east->south->west",
+ "R_facing_k1": [
+  0,
+  3,
+  4,
+  2,
+  1,
+  5,
+  6
+ ],
+ "R_axis_k1": [
+  0,
+  3,
+  2,
+  1,
+  4,
+  5,
+  6
+ ],
+ "HZ_k1": [
+  0,
+  4,
+  8,
+  12,
+  2,
+  6,
+  10,
+  14,
+  1,
+  5,
+  9,
+  13,
+  3,
+  7,
+  11,
+  15
+ ],
+ "axis_like_classes": [
+  "minecraft:spruce_wood",
+  "minecraft:oak_wood",
+  "minecraft:spruce_log",
+  "minecraft:oak_log",
+  "minecraft:stripped_spruce_log",
+  "minecraft:quartz_pillar",
+  "minecraft:stripped_acacia_wood",
+  "minecraft:stripped_pale_oak_wood",
+  "minecraft:bone_block",
+  "minecraft:stripped_oak_wood",
+  "minecraft:dark_oak_log",
+  "minecraft:ochre_froglight",
+  "minecraft:stripped_spruce_wood",
+  "minecraft:stripped_jungle_wood",
+  "minecraft:stripped_dark_oak_log"
+ ]
+}
