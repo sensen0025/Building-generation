@@ -1,0 +1,29 @@
+{
+  "viewer_only": true,
+  "ply": "/home/sensen/Desktop/hyworld2_exterior_ref/new2_aligned_pcd.ply",
+  "blocks_per_unit": 8.0,
+  "origin_xyz": [
+    -27,
+    -6,
+    -39
+  ],
+  "shape": [
+    64,
+    64,
+    64
+  ],
+  "occupied_cells": 8656,
+  "sky_removed_fraction": 0.0399,
+  "palette": [
+    "minecraft:air",
+    "minecraft:dirt",
+    "minecraft:grass_block[snowy=false]",
+    "minecraft:moss_block",
+    "minecraft:oak_planks",
+    "minecraft:sand",
+    "minecraft:stone",
+    "minecraft:stone_bricks",
+    "minecraft:water[level=0]"
+  ],
+  "note": "each block is one cell containing at least one cloud point; colour->block is a fixed display palette, NOT a trained material prediction"
+}

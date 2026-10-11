@@ -1,0 +1,2418 @@
+{
+  "scope": "TRELLIS-shaped coarse latent flow conditioned on point evidence; frozen stage-1 VAE",
+  "supervision_contract": "closed-object-air-v3-exact-evidence",
+  "evidence_contract": "canonical-counts-positive-64-v1",
+  "reference": "microsoft/TRELLIS 442aa1e1 sparse_structure_flow.py + flow_euler.py",
+  "width": 512,
+  "blocks": 12,
+  "heads": 8,
+  "batch": 2,
+  "steps": 33102,
+  "step_limit": 40000,
+  "sample_steps": 25,
+  "warmstart": {
+    "path": "/run/media/sensen/Data1/minecraft/AI_3D_World_Repos/outputs/cloudbuild/trellis_flow_reg_v1/best.pt",
+    "step": 4000
+  },
+  "condition_position": false,
+  "weight_decay": 0.01,
+  "lr_schedule": "cosine",
+  "ema_decay": 0.999,
+  "occupancy_weight": 0.0,
+  "occupancy_every": 1,
+  "occupancy_samples": 1,
+  "best_val_iou": 0.5093776136636734,
+  "best_val_step": 3000,
+  "selected_checkpoint": "best.pt",
+  "training_minutes": 305.9,
+  "wall_minutes": 310.1,
+  "train_buildings": 9797,
+  "val_buildings": [
+    "005e92b88e06f59c4a23d76b1a7db0259a0c1f721fcdc782d5152a828604f121",
+    "00b6b0f42dac7a1f",
+    "00dad95bfdf03a21",
+    "00e1277c993e9161b298aad78e8a1ad9febd74be769118d8806bb4add42610e8",
+    "010c67a79a149d3d289387dbc84cf734d0b3684644f7601cfcca854b52107913",
+    "012654c9da950cdd",
+    "01363eef29a75c3d",
+    "0138e16415c42536"
+  ],
+  "solids_dropped_outside_grid": 0.0,
+  "gpu_peak_allocated_gb": 6.22,
+  "validation": [
+    {
+      "building": "005e92b88e06f59c4a23d76b1a7db0259a0c1f721fcdc782d5152a828604f121",
+      "split": "val",
+      "point_evidence_iou": 0.21992221474647522,
+      "vae_ceiling_iou": 0.8798326253890991,
+      "flow_iou": 0.3189345598220825,
+      "flow_iou_guidance1.0": 0.3189345598220825,
+      "flow_unconditioned_iou": 0.16327472031116486
+    },
+    {
+      "building": "00b6b0f42dac7a1f",
+      "split": "val",
+      "point_evidence_iou": 0.5236051678657532,
+      "vae_ceiling_iou": 0.8367117047309875,
+      "flow_iou": 0.6444212794303894,
+      "flow_iou_guidance1.0": 0.6444212794303894,
+      "flow_unconditioned_iou": 0.11291659623384476
+    },
+    {
+      "building": "00dad95bfdf03a21",
+      "split": "val",
+      "point_evidence_iou": 0.44260281324386597,
+      "vae_ceiling_iou": 0.8149276375770569,
+      "flow_iou": 0.3733062446117401,
+      "flow_iou_guidance1.0": 0.3733062446117401,
+      "flow_unconditioned_iou": 0.11022263765335083
+    },
+    {
+      "building": "00e1277c993e9161b298aad78e8a1ad9febd74be769118d8806bb4add42610e8",
+      "split": "val",
+      "point_evidence_iou": 0.4628647267818451,
+      "vae_ceiling_iou": 0.6194539070129395,
+      "flow_iou": 0.45038166642189026,
+      "flow_iou_guidance1.0": 0.45038166642189026,
+      "flow_unconditioned_iou": 0.054094791412353516
+    },
+    {
+      "building": "010c67a79a149d3d289387dbc84cf734d0b3684644f7601cfcca854b52107913",
+      "split": "val",
+      "point_evidence_iou": 0.4146341383457184,
+      "vae_ceiling_iou": 0.7549747824668884,
+      "flow_iou": 0.49811699986457825,
+      "flow_iou_guidance1.0": 0.49811699986457825,
+      "flow_unconditioned_iou": 0.2491183578968048
+    },
+    {
+      "building": "012654c9da950cdd",
+      "split": "val",
+      "point_evidence_iou": 0.5664403438568115,
+      "vae_ceiling_iou": 0.8463476300239563,
+      "flow_iou": 0.6159574389457703,
+      "flow_iou_guidance1.0": 0.6159574389457703,
+      "flow_unconditioned_iou": 0.09385327249765396
+    },
+    {
+      "building": "01363eef29a75c3d",
+      "split": "val",
+      "point_evidence_iou": 0.45284897089004517,
+      "vae_ceiling_iou": 0.8562300205230713,
+      "flow_iou": 0.3681829571723938,
+      "flow_iou_guidance1.0": 0.3681829571723938,
+      "flow_unconditioned_iou": 0.3425297141075134
+    },
+    {
+      "building": "0138e16415c42536",
+      "split": "val",
+      "point_evidence_iou": 0.3007633686065674,
+      "vae_ceiling_iou": 0.9138942956924438,
+      "flow_iou": 0.30377906560897827,
+      "flow_iou_guidance1.0": 0.30377906560897827,
+      "flow_unconditioned_iou": 0.04785478487610817
+    }
+  ],
+  "condition_dropout": 0.1,
+  "standardised_latents": true,
+  "completion_formulation": true,
+  "source_sigma": 0.6,
+  "latent_mean": [
+    0.009291068650782108,
+    -0.028337104246020317,
+    -0.005139606539160013,
+    0.013634132221341133,
+    -0.06314024329185486,
+    0.09587176144123077,
+    -0.07156719267368317,
+    -0.028907136991620064
+  ],
+  "latent_std": [
+    0.5614634156227112,
+    0.40283203125,
+    0.460099995136261,
+    0.49839887022972107,
+    0.40768834948539734,
+    0.4100072383880615,
+    0.83042973279953,
+    0.506778359413147
+  ],
+  "fit_curve": [
+    {
+      "step": 3000,
+      "train": 0.6407885253429413,
+      "val": 0.5093776136636734
+    },
+    {
+      "step": 6000,
+      "train": 0.6199326813220978,
+      "val": 0.5047541707754135
+    },
+    {
+      "step": 9000,
+      "train": 0.6258953809738159,
+      "val": 0.5075106471776962
+    },
+    {
+      "step": 12000,
+      "train": 0.6196024715900421,
+      "val": 0.5042840242385864
+    },
+    {
+      "step": 15000,
+      "train": 0.6156637668609619,
+      "val": 0.5031781196594238
+    },
+    {
+      "step": 18000,
+      "train": 0.6229009926319122,
+      "val": 0.4992541968822479
+    },
+    {
+      "step": 21000,
+      "train": 0.6677221357822418,
+      "val": 0.5009596198797226
+    },
+    {
+      "step": 24000,
+      "train": 0.6552269756793976,
+      "val": 0.49861669540405273
+    },
+    {
+      "step": 27000,
+      "train": 0.6704557836055756,
+      "val": 0.4913228154182434
+    },
+    {
+      "step": 30000,
+      "train": 0.6935020089149475,
+      "val": 0.48723334074020386
+    },
+    {
+      "step": 33000,
+      "train": 0.6987649500370026,
+      "val": 0.4885183721780777
+    }
+  ],
+  "gain_over_evidence": {
+    "flow": 0.02367480844259262,
+    "note": "completion formulation starts at the evidence latent, so an UNTRAINED model already scores ~evidence; judge the gain"
+  },
+  "guidance_scales": [
+    1.0
+  ],
+  "mean": {
+    "point_evidence_iou": 0.42296021804213524,
+    "vae_ceiling_iou": 0.8152965754270554,
+    "flow_iou": 0.44663502648472786,
+    "flow_iou_guidance1.0": 0.44663502648472786,
+    "flow_unconditioned_iou": 0.1467331093735993
+  },
+  "history": [
+    {
+      "step": 200,
+      "mse": 0.6862789820134639,
+      "lr": 9.999383162408304e-05,
+      "elapsed_min": 5.6,
+      "peak_gpu_gb": 2.76
+    },
+    {
+      "step": 400,
+      "mse": 0.7255563557147979,
+      "lr": 9.997532801828658e-05,
+      "elapsed_min": 7.1,
+      "peak_gpu_gb": 2.76
+    },
+    {
+      "step": 600,
+      "mse": 0.7289782160520554,
+      "lr": 9.994449374809851e-05,
+      "elapsed_min": 8.5,
+      "peak_gpu_gb": 2.76
+    },
+    {
+      "step": 800,
+      "mse": 0.7085765210539102,
+      "lr": 9.990133642141359e-05,
+      "elapsed_min": 9.9,
+      "peak_gpu_gb": 2.76
+    },
+    {
+      "step": 1000,
+      "mse": 0.7539868105202914,
+      "lr": 9.98458666866564e-05,
+      "elapsed_min": 11.3,
+      "peak_gpu_gb": 2.76
+    },
+    {
+      "step": 1200,
+      "mse": 0.739793366715312,
+      "lr": 9.977809823015401e-05,
+      "elapsed_min": 12.9,
+      "peak_gpu_gb": 2.76
+    },
+    {
+      "step": 1400,
+      "mse": 0.6864691079407931,
+      "lr": 9.9698047772759e-05,
+      "elapsed_min": 14.3,
+      "peak_gpu_gb": 2.76
+    },
+    {
+      "step": 1600,
+      "mse": 0.6977477359771729,
+      "lr": 9.96057350657239e-05,
+      "elapsed_min": 15.7,
+      "peak_gpu_gb": 2.76
+    },
+    {
+      "step": 1800,
+      "mse": 0.7154816918820143,
+      "lr": 9.950118288582788e-05,
+      "elapsed_min": 17.1,
+      "peak_gpu_gb": 2.76
+    },
+    {
+      "step": 2000,
+      "mse": 0.7006745927035809,
+      "lr": 9.938441702975689e-05,
+      "elapsed_min": 18.5,
+      "peak_gpu_gb": 2.76
+    },
+    {
+      "step": 2200,
+      "mse": 0.69921236500144,
+      "lr": 9.92554663077387e-05,
+      "elapsed_min": 20.0,
+      "peak_gpu_gb": 2.76
+    },
+    {
+      "step": 2400,
+      "mse": 0.6449564802646637,
+      "lr": 9.911436253643445e-05,
+      "elapsed_min": 21.4,
+      "peak_gpu_gb": 2.76
+    },
+    {
+      "step": 2600,
+      "mse": 0.6712488076090812,
+      "lr": 9.896114053108829e-05,
+      "elapsed_min": 22.9,
+      "peak_gpu_gb": 2.76
+    },
+    {
+      "step": 2800,
+      "mse": 0.6834220539033413,
+      "lr": 9.879583809693738e-05,
+      "elapsed_min": 24.3,
+      "peak_gpu_gb": 2.76
+    },
+    {
+      "step": 3000,
+      "mse": 0.6770398776978255,
+      "lr": 9.861849601988383e-05,
+      "elapsed_min": 25.7,
+      "peak_gpu_gb": 2.76,
+      "fit_train_iou": 0.6407885253429413,
+      "fit_val_iou": 0.5093776136636734,
+      "probe": {
+        "train": [
+          {
+            "building": "00041ebfddbfae9160abe2984d904ae9731dcc3aa1c605ca89ed2ce00da73a89",
+            "split": "train",
+            "point_evidence_iou": 0.486797571182251,
+            "vae_ceiling_iou": 0.8889802694320679,
+            "flow_iou": 0.7927786707878113,
+            "flow_unconditioned_iou": 0.15925441682338715
+          },
+          {
+            "building": "000614f93dc994c6",
+            "split": "train",
+            "point_evidence_iou": 0.5159235596656799,
+            "vae_ceiling_iou": 0.7406483888626099,
+            "flow_iou": 0.4887983798980713,
+            "flow_unconditioned_iou": 0.021819526329636574
+          }
+        ],
+        "val": [
+          {
+            "building": "005e92b88e06f59c4a23d76b1a7db0259a0c1f721fcdc782d5152a828604f121",
+            "split": "val",
+            "point_evidence_iou": 0.21992221474647522,
+            "vae_ceiling_iou": 0.8798326253890991,
+            "flow_iou": 0.35447683930397034,
+            "flow_unconditioned_iou": 0.06322095543146133
+          },
+          {
+            "building": "00b6b0f42dac7a1f",
+            "split": "val",
+            "point_evidence_iou": 0.5236051678657532,
+            "vae_ceiling_iou": 0.8367117047309875,
+            "flow_iou": 0.6642783880233765,
+            "flow_unconditioned_iou": 0.1517537534236908
+          }
+        ]
+      },
+      "best_val_iou": 0.5093776136636734,
+      "probe_peak_gpu_gb": 6.23
+    },
+    {
+      "step": 3200,
+      "mse": 0.6908240030705929,
+      "lr": 9.842915805643155e-05,
+      "elapsed_min": 28.7,
+      "peak_gpu_gb": 2.76
+    },
+    {
+      "step": 3400,
+      "mse": 0.7022164759039878,
+      "lr": 9.822787092288991e-05,
+      "elapsed_min": 30.2,
+      "peak_gpu_gb": 2.76
+    },
+    {
+      "step": 3600,
+      "mse": 0.6643223813921213,
+      "lr": 9.801468428384716e-05,
+      "elapsed_min": 31.6,
+      "peak_gpu_gb": 2.76
+    },
+    {
+      "step": 3800,
+      "mse": 0.6915274529904127,
+      "lr": 9.778965073991651e-05,
+      "elapsed_min": 33.0,
+      "peak_gpu_gb": 2.76
+    },
+    {
+      "step": 4000,
+      "mse": 0.7094358726590871,
+      "lr": 9.755282581475769e-05,
+      "elapsed_min": 34.4,
+      "peak_gpu_gb": 2.76,
+      "validation": [
+        {
+          "building": "005e92b88e06f59c4a23d76b1a7db0259a0c1f721fcdc782d5152a828604f121",
+          "split": "val",
+          "point_evidence_iou": 0.21992221474647522,
+          "vae_ceiling_iou": 0.8798326253890991,
+          "flow_iou": 0.34125033020973206,
+          "flow_iou_guidance1.0": 0.34125033020973206,
+          "flow_unconditioned_iou": 0.05524720996618271
+        },
+        {
+          "building": "00b6b0f42dac7a1f",
+          "split": "val",
+          "point_evidence_iou": 0.5236051678657532,
+          "vae_ceiling_iou": 0.8367117047309875,
+          "flow_iou": 0.6701570749282837,
+          "flow_iou_guidance1.0": 0.6701570749282837,
+          "flow_unconditioned_iou": 0.15944214165210724
+        },
+        {
+          "building": "00dad95bfdf03a21",
+          "split": "val",
+          "point_evidence_iou": 0.44260281324386597,
+          "vae_ceiling_iou": 0.8149276375770569,
+          "flow_iou": 0.4170522093772888,
+          "flow_iou_guidance1.0": 0.4170522093772888,
+          "flow_unconditioned_iou": 0.14148442447185516
+        },
+        {
+          "building": "00e1277c993e9161b298aad78e8a1ad9febd74be769118d8806bb4add42610e8",
+          "split": "val",
+          "point_evidence_iou": 0.4628647267818451,
+          "vae_ceiling_iou": 0.6194539070129395,
+          "flow_iou": 0.47235387563705444,
+          "flow_iou_guidance1.0": 0.47235387563705444,
+          "flow_unconditioned_iou": 0.06235012039542198
+        },
+        {
+          "building": "010c67a79a149d3d289387dbc84cf734d0b3684644f7601cfcca854b52107913",
+          "split": "val",
+          "point_evidence_iou": 0.4146341383457184,
+          "vae_ceiling_iou": 0.7549747824668884,
+          "flow_iou": 0.5175077319145203,
+          "flow_iou_guidance1.0": 0.5175077319145203,
+          "flow_unconditioned_iou": 0.1937328428030014
+        },
+        {
+          "building": "012654c9da950cdd",
+          "split": "val",
+          "point_evidence_iou": 0.5664403438568115,
+          "vae_ceiling_iou": 0.8463476300239563,
+          "flow_iou": 0.6204081773757935,
+          "flow_iou_guidance1.0": 0.6204081773757935,
+          "flow_unconditioned_iou": 0.143295019865036
+        },
+        {
+          "building": "01363eef29a75c3d",
+          "split": "val",
+          "point_evidence_iou": 0.45284897089004517,
+          "vae_ceiling_iou": 0.8562300205230713,
+          "flow_iou": 0.45476478338241577,
+          "flow_iou_guidance1.0": 0.45476478338241577,
+          "flow_unconditioned_iou": 0.21406346559524536
+        },
+        {
+          "building": "0138e16415c42536",
+          "split": "val",
+          "point_evidence_iou": 0.3007633686065674,
+          "vae_ceiling_iou": 0.9138942956924438,
+          "flow_iou": 0.2795388996601105,
+          "flow_iou_guidance1.0": 0.2795388996601105,
+          "flow_unconditioned_iou": 0.05439005419611931
+        }
+      ]
+    },
+    {
+      "step": 4200,
+      "mse": 0.6689202155917883,
+      "lr": 9.730426794137727e-05,
+      "elapsed_min": 41.6,
+      "peak_gpu_gb": 2.76
+    },
+    {
+      "step": 4400,
+      "mse": 0.6791314081847668,
+      "lr": 9.704403844771128e-05,
+      "elapsed_min": 43.0,
+      "peak_gpu_gb": 2.76
+    },
+    {
+      "step": 4600,
+      "mse": 0.7474834755063057,
+      "lr": 9.677220154149337e-05,
+      "elapsed_min": 44.5,
+      "peak_gpu_gb": 2.76
+    },
+    {
+      "step": 4800,
+      "mse": 0.7087560863047838,
+      "lr": 9.648882429441257e-05,
+      "elapsed_min": 45.9,
+      "peak_gpu_gb": 2.76
+    },
+    {
+      "step": 5000,
+      "mse": 0.6908275720477104,
+      "lr": 9.619397662556435e-05,
+      "elapsed_min": 47.3,
+      "peak_gpu_gb": 2.76
+    },
+    {
+      "step": 5200,
+      "mse": 0.6765945209562778,
+      "lr": 9.588773128419906e-05,
+      "elapsed_min": 48.8,
+      "peak_gpu_gb": 2.76
+    },
+    {
+      "step": 5400,
+      "mse": 0.653772200345993,
+      "lr": 9.557016383177227e-05,
+      "elapsed_min": 50.2,
+      "peak_gpu_gb": 2.76
+    },
+    {
+      "step": 5600,
+      "mse": 0.6443957728147507,
+      "lr": 9.524135262330098e-05,
+      "elapsed_min": 51.6,
+      "peak_gpu_gb": 2.76
+    },
+    {
+      "step": 5800,
+      "mse": 0.6703007905185223,
+      "lr": 9.490137878803079e-05,
+      "elapsed_min": 53.0,
+      "peak_gpu_gb": 2.76
+    },
+    {
+      "step": 6000,
+      "mse": 0.6656815841794014,
+      "lr": 9.45503262094184e-05,
+      "elapsed_min": 54.4,
+      "peak_gpu_gb": 2.76,
+      "fit_train_iou": 0.6199326813220978,
+      "fit_val_iou": 0.5047541707754135,
+      "probe": {
+        "train": [
+          {
+            "building": "00041ebfddbfae9160abe2984d904ae9731dcc3aa1c605ca89ed2ce00da73a89",
+            "split": "train",
+            "point_evidence_iou": 0.486797571182251,
+            "vae_ceiling_iou": 0.8889802694320679,
+            "flow_iou": 0.7864000201225281,
+            "flow_unconditioned_iou": 0.1679942011833191
+          },
+          {
+            "building": "000614f93dc994c6",
+            "split": "train",
+            "point_evidence_iou": 0.5159235596656799,
+            "vae_ceiling_iou": 0.7406483888626099,
+            "flow_iou": 0.4534653425216675,
+            "flow_unconditioned_iou": 0.03865847364068031
+          }
+        ],
+        "val": [
+          {
+            "building": "005e92b88e06f59c4a23d76b1a7db0259a0c1f721fcdc782d5152a828604f121",
+            "split": "val",
+            "point_evidence_iou": 0.21992221474647522,
+            "vae_ceiling_iou": 0.8798326253890991,
+            "flow_iou": 0.3448929488658905,
+            "flow_unconditioned_iou": 0.08301705121994019
+          },
+          {
+            "building": "00b6b0f42dac7a1f",
+            "split": "val",
+            "point_evidence_iou": 0.5236051678657532,
+            "vae_ceiling_iou": 0.8367117047309875,
+            "flow_iou": 0.6646153926849365,
+            "flow_unconditioned_iou": 0.15781369805335999
+          }
+        ]
+      },
+      "probe_peak_gpu_gb": 6.22
+    },
+    {
+      "step": 6200,
+      "mse": 0.6713878374546767,
+      "lr": 9.418828150443469e-05,
+      "elapsed_min": 57.3,
+      "peak_gpu_gb": 2.76
+    },
+    {
+      "step": 6400,
+      "mse": 0.6571477298438549,
+      "lr": 9.381533400219318e-05,
+      "elapsed_min": 58.7,
+      "peak_gpu_gb": 2.75
+    },
+    {
+      "step": 6600,
+      "mse": 0.700821992084384,
+      "lr": 9.343157572190957e-05,
+      "elapsed_min": 60.1,
+      "peak_gpu_gb": 2.75
+    },
+    {
+      "step": 6800,
+      "mse": 0.657715793773532,
+      "lr": 9.30371013501972e-05,
+      "elapsed_min": 61.5,
+      "peak_gpu_gb": 2.75
+    },
+    {
+      "step": 7000,
+      "mse": 0.6533508260548114,
+      "lr": 9.263200821770461e-05,
+      "elapsed_min": 63.0,
+      "peak_gpu_gb": 2.75
+    },
+    {
+      "step": 7200,
+      "mse": 0.6498422970995307,
+      "lr": 9.221639627510076e-05,
+      "elapsed_min": 64.5,
+      "peak_gpu_gb": 2.75
+    },
+    {
+      "step": 7400,
+      "mse": 0.6972424437850714,
+      "lr": 9.179036806841353e-05,
+      "elapsed_min": 65.9,
+      "peak_gpu_gb": 2.75
+    },
+    {
+      "step": 7600,
+      "mse": 0.6813528686761856,
+      "lr": 9.135402871372808e-05,
+      "elapsed_min": 67.3,
+      "peak_gpu_gb": 2.75
+    },
+    {
+      "step": 7800,
+      "mse": 0.6625007382035255,
+      "lr": 9.090748587125118e-05,
+      "elapsed_min": 68.7,
+      "peak_gpu_gb": 2.75
+    },
+    {
+      "step": 8000,
+      "mse": 0.6999654464423657,
+      "lr": 9.045084971874738e-05,
+      "elapsed_min": 70.1,
+      "peak_gpu_gb": 2.75,
+      "validation": [
+        {
+          "building": "005e92b88e06f59c4a23d76b1a7db0259a0c1f721fcdc782d5152a828604f121",
+          "split": "val",
+          "point_evidence_iou": 0.21992221474647522,
+          "vae_ceiling_iou": 0.8798326253890991,
+          "flow_iou": 0.35020607709884644,
+          "flow_iou_guidance1.0": 0.35020607709884644,
+          "flow_unconditioned_iou": 0.1209658682346344
+        },
+        {
+          "building": "00b6b0f42dac7a1f",
+          "split": "val",
+          "point_evidence_iou": 0.5236051678657532,
+          "vae_ceiling_iou": 0.8367117047309875,
+          "flow_iou": 0.6701352596282959,
+          "flow_iou_guidance1.0": 0.6701352596282959,
+          "flow_unconditioned_iou": 0.12811113893985748
+        },
+        {
+          "building": "00dad95bfdf03a21",
+          "split": "val",
+          "point_evidence_iou": 0.44260281324386597,
+          "vae_ceiling_iou": 0.8149276375770569,
+          "flow_iou": 0.40857332944869995,
+          "flow_iou_guidance1.0": 0.40857332944869995,
+          "flow_unconditioned_iou": 0.130592942237854
+        },
+        {
+          "building": "00e1277c993e9161b298aad78e8a1ad9febd74be769118d8806bb4add42610e8",
+          "split": "val",
+          "point_evidence_iou": 0.4628647267818451,
+          "vae_ceiling_iou": 0.6194539070129395,
+          "flow_iou": 0.4711388349533081,
+          "flow_iou_guidance1.0": 0.4711388349533081,
+          "flow_unconditioned_iou": 0.06263456493616104
+        },
+        {
+          "building": "010c67a79a149d3d289387dbc84cf734d0b3684644f7601cfcca854b52107913",
+          "split": "val",
+          "point_evidence_iou": 0.4146341383457184,
+          "vae_ceiling_iou": 0.7549747824668884,
+          "flow_iou": 0.513839066028595,
+          "flow_iou_guidance1.0": 0.513839066028595,
+          "flow_unconditioned_iou": 0.25274381041526794
+        },
+        {
+          "building": "012654c9da950cdd",
+          "split": "val",
+          "point_evidence_iou": 0.5664403438568115,
+          "vae_ceiling_iou": 0.8463476300239563,
+          "flow_iou": 0.617435872554779,
+          "flow_iou_guidance1.0": 0.617435872554779,
+          "flow_unconditioned_iou": 0.10694364458322525
+        },
+        {
+          "building": "01363eef29a75c3d",
+          "split": "val",
+          "point_evidence_iou": 0.45284897089004517,
+          "vae_ceiling_iou": 0.8562300205230713,
+          "flow_iou": 0.42970821261405945,
+          "flow_iou_guidance1.0": 0.42970821261405945,
+          "flow_unconditioned_iou": 0.32188841700553894
+        },
+        {
+          "building": "0138e16415c42536",
+          "split": "val",
+          "point_evidence_iou": 0.3007633686065674,
+          "vae_ceiling_iou": 0.9138942956924438,
+          "flow_iou": 0.2641243040561676,
+          "flow_iou_guidance1.0": 0.2641243040561676,
+          "flow_unconditioned_iou": 0.053389668464660645
+        }
+      ]
+    },
+    {
+      "step": 8200,
+      "mse": 0.6782058631628751,
+      "lr": 8.998423292435454e-05,
+      "elapsed_min": 77.3,
+      "peak_gpu_gb": 2.76
+    },
+    {
+      "step": 8400,
+      "mse": 0.6451162121444941,
+      "lr": 8.950775061878453e-05,
+      "elapsed_min": 78.8,
+      "peak_gpu_gb": 2.75
+    },
+    {
+      "step": 8600,
+      "mse": 0.6706039723008871,
+      "lr": 8.90215203669165e-05,
+      "elapsed_min": 80.2,
+      "peak_gpu_gb": 2.75
+    },
+    {
+      "step": 8800,
+      "mse": 0.7018531942367554,
+      "lr": 8.852566213878947e-05,
+      "elapsed_min": 81.6,
+      "peak_gpu_gb": 2.75
+    },
+    {
+      "step": 9000,
+      "mse": 0.6695481999218464,
+      "lr": 8.802029828000156e-05,
+      "elapsed_min": 83.0,
+      "peak_gpu_gb": 2.75,
+      "fit_train_iou": 0.6258953809738159,
+      "fit_val_iou": 0.5075106471776962,
+      "probe": {
+        "train": [
+          {
+            "building": "00041ebfddbfae9160abe2984d904ae9731dcc3aa1c605ca89ed2ce00da73a89",
+            "split": "train",
+            "point_evidence_iou": 0.486797571182251,
+            "vae_ceiling_iou": 0.8889802694320679,
+            "flow_iou": 0.8112449645996094,
+            "flow_unconditioned_iou": 0.17769671976566315
+          },
+          {
+            "building": "000614f93dc994c6",
+            "split": "train",
+            "point_evidence_iou": 0.5159235596656799,
+            "vae_ceiling_iou": 0.7406483888626099,
+            "flow_iou": 0.44054579734802246,
+            "flow_unconditioned_iou": 0.041225627064704895
+          }
+        ],
+        "val": [
+          {
+            "building": "005e92b88e06f59c4a23d76b1a7db0259a0c1f721fcdc782d5152a828604f121",
+            "split": "val",
+            "point_evidence_iou": 0.21992221474647522,
+            "vae_ceiling_iou": 0.8798326253890991,
+            "flow_iou": 0.33637651801109314,
+            "flow_unconditioned_iou": 0.06927455216646194
+          },
+          {
+            "building": "00b6b0f42dac7a1f",
+            "split": "val",
+            "point_evidence_iou": 0.5236051678657532,
+            "vae_ceiling_iou": 0.8367117047309875,
+            "flow_iou": 0.6786447763442993,
+            "flow_unconditioned_iou": 0.1586073487997055
+          }
+        ]
+      },
+      "probe_peak_gpu_gb": 6.23
+    },
+    {
+      "step": 9200,
+      "mse": 0.6710118126124144,
+      "lr": 8.750555348152298e-05,
+      "elapsed_min": 85.9,
+      "peak_gpu_gb": 2.76
+    },
+    {
+      "step": 9400,
+      "mse": 0.6427083817124367,
+      "lr": 8.69815547489305e-05,
+      "elapsed_min": 87.4,
+      "peak_gpu_gb": 2.76
+    },
+    {
+      "step": 9600,
+      "mse": 0.6823753133416176,
+      "lr": 8.644843137107059e-05,
+      "elapsed_min": 88.8,
+      "peak_gpu_gb": 2.76
+    },
+    {
+      "step": 9800,
+      "mse": 0.6620659989863634,
+      "lr": 8.590631488815944e-05,
+      "elapsed_min": 90.2,
+      "peak_gpu_gb": 2.76
+    },
+    {
+      "step": 10000,
+      "mse": 0.6520915830135345,
+      "lr": 8.535533905932738e-05,
+      "elapsed_min": 91.6,
+      "peak_gpu_gb": 2.76
+    },
+    {
+      "step": 10200,
+      "mse": 0.6580115190893412,
+      "lr": 8.479563982961571e-05,
+      "elapsed_min": 93.2,
+      "peak_gpu_gb": 2.76
+    },
+    {
+      "step": 10400,
+      "mse": 0.6317661120742559,
+      "lr": 8.422735529643444e-05,
+      "elapsed_min": 94.6,
+      "peak_gpu_gb": 2.76
+    },
+    {
+      "step": 10600,
+      "mse": 0.6794637941569089,
+      "lr": 8.365062567548867e-05,
+      "elapsed_min": 96.0,
+      "peak_gpu_gb": 2.76
+    },
+    {
+      "step": 10800,
+      "mse": 0.6586165724694729,
+      "lr": 8.306559326618259e-05,
+      "elapsed_min": 97.4,
+      "peak_gpu_gb": 2.76
+    },
+    {
+      "step": 11000,
+      "mse": 0.7078831744939089,
+      "lr": 8.247240241650918e-05,
+      "elapsed_min": 98.8,
+      "peak_gpu_gb": 2.76
+    },
+    {
+      "step": 11200,
+      "mse": 0.6359926123917102,
+      "lr": 8.18711994874345e-05,
+      "elapsed_min": 100.4,
+      "peak_gpu_gb": 2.76
+    },
+    {
+      "step": 11400,
+      "mse": 0.6343368891626596,
+      "lr": 8.126213281678528e-05,
+      "elapsed_min": 101.8,
+      "peak_gpu_gb": 2.76
+    },
+    {
+      "step": 11600,
+      "mse": 0.6464993588626384,
+      "lr": 8.064535268264883e-05,
+      "elapsed_min": 103.2,
+      "peak_gpu_gb": 2.76
+    },
+    {
+      "step": 11800,
+      "mse": 0.6610618285089731,
+      "lr": 8.002101126629421e-05,
+      "elapsed_min": 104.7,
+      "peak_gpu_gb": 2.76
+    },
+    {
+      "step": 12000,
+      "mse": 0.6228127379715442,
+      "lr": 7.938926261462366e-05,
+      "elapsed_min": 106.1,
+      "peak_gpu_gb": 2.76,
+      "fit_train_iou": 0.6196024715900421,
+      "fit_val_iou": 0.5042840242385864,
+      "probe": {
+        "train": [
+          {
+            "building": "00041ebfddbfae9160abe2984d904ae9731dcc3aa1c605ca89ed2ce00da73a89",
+            "split": "train",
+            "point_evidence_iou": 0.486797571182251,
+            "vae_ceiling_iou": 0.8889802694320679,
+            "flow_iou": 0.8053528070449829,
+            "flow_unconditioned_iou": 0.14254602789878845
+          },
+          {
+            "building": "000614f93dc994c6",
+            "split": "train",
+            "point_evidence_iou": 0.5159235596656799,
+            "vae_ceiling_iou": 0.7406483888626099,
+            "flow_iou": 0.4338521361351013,
+            "flow_unconditioned_iou": 0.03142443671822548
+          }
+        ],
+        "val": [
+          {
+            "building": "005e92b88e06f59c4a23d76b1a7db0259a0c1f721fcdc782d5152a828604f121",
+            "split": "val",
+            "point_evidence_iou": 0.21992221474647522,
+            "vae_ceiling_iou": 0.8798326253890991,
+            "flow_iou": 0.3456931710243225,
+            "flow_unconditioned_iou": 0.10955286771059036
+          },
+          {
+            "building": "00b6b0f42dac7a1f",
+            "split": "val",
+            "point_evidence_iou": 0.5236051678657532,
+            "vae_ceiling_iou": 0.8367117047309875,
+            "flow_iou": 0.6628748774528503,
+            "flow_unconditioned_iou": 0.12922629714012146
+          }
+        ]
+      },
+      "probe_peak_gpu_gb": 6.22,
+      "validation": [
+        {
+          "building": "005e92b88e06f59c4a23d76b1a7db0259a0c1f721fcdc782d5152a828604f121",
+          "split": "val",
+          "point_evidence_iou": 0.21992221474647522,
+          "vae_ceiling_iou": 0.8798326253890991,
+          "flow_iou": 0.3383015990257263,
+          "flow_iou_guidance1.0": 0.3383015990257263,
+          "flow_unconditioned_iou": 0.10955286771059036
+        },
+        {
+          "building": "00b6b0f42dac7a1f",
+          "split": "val",
+          "point_evidence_iou": 0.5236051678657532,
+          "vae_ceiling_iou": 0.8367117047309875,
+          "flow_iou": 0.659375011920929,
+          "flow_iou_guidance1.0": 0.659375011920929,
+          "flow_unconditioned_iou": 0.12922629714012146
+        },
+        {
+          "building": "00dad95bfdf03a21",
+          "split": "val",
+          "point_evidence_iou": 0.44260281324386597,
+          "vae_ceiling_iou": 0.8149276375770569,
+          "flow_iou": 0.38988688588142395,
+          "flow_iou_guidance1.0": 0.38988688588142395,
+          "flow_unconditioned_iou": 0.12090242654085159
+        },
+        {
+          "building": "00e1277c993e9161b298aad78e8a1ad9febd74be769118d8806bb4add42610e8",
+          "split": "val",
+          "point_evidence_iou": 0.4628647267818451,
+          "vae_ceiling_iou": 0.6194539070129395,
+          "flow_iou": 0.4644549787044525,
+          "flow_iou_guidance1.0": 0.4644549787044525,
+          "flow_unconditioned_iou": 0.059443507343530655
+        },
+        {
+          "building": "010c67a79a149d3d289387dbc84cf734d0b3684644f7601cfcca854b52107913",
+          "split": "val",
+          "point_evidence_iou": 0.4146341383457184,
+          "vae_ceiling_iou": 0.7549747824668884,
+          "flow_iou": 0.5098692774772644,
+          "flow_iou_guidance1.0": 0.5098692774772644,
+          "flow_unconditioned_iou": 0.25239354372024536
+        },
+        {
+          "building": "012654c9da950cdd",
+          "split": "val",
+          "point_evidence_iou": 0.5664403438568115,
+          "vae_ceiling_iou": 0.8463476300239563,
+          "flow_iou": 0.625,
+          "flow_iou_guidance1.0": 0.625,
+          "flow_unconditioned_iou": 0.10532837361097336
+        },
+        {
+          "building": "01363eef29a75c3d",
+          "split": "val",
+          "point_evidence_iou": 0.45284897089004517,
+          "vae_ceiling_iou": 0.8562300205230713,
+          "flow_iou": 0.42223820090293884,
+          "flow_iou_guidance1.0": 0.42223820090293884,
+          "flow_unconditioned_iou": 0.30991077423095703
+        },
+        {
+          "building": "0138e16415c42536",
+          "split": "val",
+          "point_evidence_iou": 0.3007633686065674,
+          "vae_ceiling_iou": 0.9138942956924438,
+          "flow_iou": 0.22607488930225372,
+          "flow_iou_guidance1.0": 0.22607488930225372,
+          "flow_unconditioned_iou": 0.05173841118812561
+        }
+      ]
+    },
+    {
+      "step": 12200,
+      "mse": 0.6516579218953847,
+      "lr": 7.875026260216393e-05,
+      "elapsed_min": 114.7,
+      "peak_gpu_gb": 2.76
+    },
+    {
+      "step": 12400,
+      "mse": 0.6297605494409799,
+      "lr": 7.810416889260653e-05,
+      "elapsed_min": 116.1,
+      "peak_gpu_gb": 2.76
+    },
+    {
+      "step": 12600,
+      "mse": 0.6395309405401349,
+      "lr": 7.74511408999066e-05,
+      "elapsed_min": 117.5,
+      "peak_gpu_gb": 2.76
+    },
+    {
+      "step": 12800,
+      "mse": 0.6458556883782148,
+      "lr": 7.679133974894983e-05,
+      "elapsed_min": 119.0,
+      "peak_gpu_gb": 2.76
+    },
+    {
+      "step": 13000,
+      "mse": 0.6113186971098185,
+      "lr": 7.612492823579745e-05,
+      "elapsed_min": 120.4,
+      "peak_gpu_gb": 2.76
+    },
+    {
+      "step": 13200,
+      "mse": 0.6302386738359929,
+      "lr": 7.545207078751857e-05,
+      "elapsed_min": 121.9,
+      "peak_gpu_gb": 2.76
+    },
+    {
+      "step": 13400,
+      "mse": 0.6201969445496798,
+      "lr": 7.477293342162039e-05,
+      "elapsed_min": 123.4,
+      "peak_gpu_gb": 2.76
+    },
+    {
+      "step": 13600,
+      "mse": 0.6516824946552515,
+      "lr": 7.408768370508576e-05,
+      "elapsed_min": 124.8,
+      "peak_gpu_gb": 2.76
+    },
+    {
+      "step": 13800,
+      "mse": 0.6221067930758,
+      "lr": 7.339649071302867e-05,
+      "elapsed_min": 126.2,
+      "peak_gpu_gb": 2.76
+    },
+    {
+      "step": 14000,
+      "mse": 0.6612942030280828,
+      "lr": 7.269952498697734e-05,
+      "elapsed_min": 127.6,
+      "peak_gpu_gb": 2.76
+    },
+    {
+      "step": 14200,
+      "mse": 0.6443237582594157,
+      "lr": 7.199695849279576e-05,
+      "elapsed_min": 129.2,
+      "peak_gpu_gb": 2.76
+    },
+    {
+      "step": 14400,
+      "mse": 0.6188111967593432,
+      "lr": 7.128896457825364e-05,
+      "elapsed_min": 130.6,
+      "peak_gpu_gb": 2.76
+    },
+    {
+      "step": 14600,
+      "mse": 0.6284049344807863,
+      "lr": 7.057571793025544e-05,
+      "elapsed_min": 132.0,
+      "peak_gpu_gb": 2.76
+    },
+    {
+      "step": 14800,
+      "mse": 0.6187892054766416,
+      "lr": 6.985739453173903e-05,
+      "elapsed_min": 133.4,
+      "peak_gpu_gb": 2.76
+    },
+    {
+      "step": 15000,
+      "mse": 0.6012266848236323,
+      "lr": 6.91341716182545e-05,
+      "elapsed_min": 134.8,
+      "peak_gpu_gb": 2.76,
+      "fit_train_iou": 0.6156637668609619,
+      "fit_val_iou": 0.5031781196594238,
+      "probe": {
+        "train": [
+          {
+            "building": "00041ebfddbfae9160abe2984d904ae9731dcc3aa1c605ca89ed2ce00da73a89",
+            "split": "train",
+            "point_evidence_iou": 0.486797571182251,
+            "vae_ceiling_iou": 0.8889802694320679,
+            "flow_iou": 0.81529700756073,
+            "flow_unconditioned_iou": 0.1963367611169815
+          },
+          {
+            "building": "000614f93dc994c6",
+            "split": "train",
+            "point_evidence_iou": 0.5159235596656799,
+            "vae_ceiling_iou": 0.7406483888626099,
+            "flow_iou": 0.41603052616119385,
+            "flow_unconditioned_iou": 0.0503571443259716
+          }
+        ],
+        "val": [
+          {
+            "building": "005e92b88e06f59c4a23d76b1a7db0259a0c1f721fcdc782d5152a828604f121",
+            "split": "val",
+            "point_evidence_iou": 0.21992221474647522,
+            "vae_ceiling_iou": 0.8798326253890991,
+            "flow_iou": 0.3407215476036072,
+            "flow_unconditioned_iou": 0.04093097895383835
+          },
+          {
+            "building": "00b6b0f42dac7a1f",
+            "split": "val",
+            "point_evidence_iou": 0.5236051678657532,
+            "vae_ceiling_iou": 0.8367117047309875,
+            "flow_iou": 0.6656346917152405,
+            "flow_unconditioned_iou": 0.17265193164348602
+          }
+        ]
+      },
+      "probe_peak_gpu_gb": 6.22
+    },
+    {
+      "step": 15200,
+      "mse": 0.6107146242260932,
+      "lr": 6.840622763423391e-05,
+      "elapsed_min": 137.8,
+      "peak_gpu_gb": 2.76
+    },
+    {
+      "step": 15400,
+      "mse": 0.6269837214052677,
+      "lr": 6.767374218896286e-05,
+      "elapsed_min": 139.2,
+      "peak_gpu_gb": 2.76
+    },
+    {
+      "step": 15600,
+      "mse": 0.6204581349343061,
+      "lr": 6.693689601226458e-05,
+      "elapsed_min": 140.6,
+      "peak_gpu_gb": 2.76
+    },
+    {
+      "step": 15800,
+      "mse": 0.6048760276287795,
+      "lr": 6.619587090990748e-05,
+      "elapsed_min": 142.0,
+      "peak_gpu_gb": 2.76
+    },
+    {
+      "step": 16000,
+      "mse": 0.6141564703732729,
+      "lr": 6.545084971874738e-05,
+      "elapsed_min": 143.4,
+      "peak_gpu_gb": 2.76,
+      "validation": [
+        {
+          "building": "005e92b88e06f59c4a23d76b1a7db0259a0c1f721fcdc782d5152a828604f121",
+          "split": "val",
+          "point_evidence_iou": 0.21992221474647522,
+          "vae_ceiling_iou": 0.8798326253890991,
+          "flow_iou": 0.327480673789978,
+          "flow_iou_guidance1.0": 0.327480673789978,
+          "flow_unconditioned_iou": 0.04266466945409775
+        },
+        {
+          "building": "00b6b0f42dac7a1f",
+          "split": "val",
+          "point_evidence_iou": 0.5236051678657532,
+          "vae_ceiling_iou": 0.8367117047309875,
+          "flow_iou": 0.6635611057281494,
+          "flow_iou_guidance1.0": 0.6635611057281494,
+          "flow_unconditioned_iou": 0.17491868138313293
+        },
+        {
+          "building": "00dad95bfdf03a21",
+          "split": "val",
+          "point_evidence_iou": 0.44260281324386597,
+          "vae_ceiling_iou": 0.8149276375770569,
+          "flow_iou": 0.41346800327301025,
+          "flow_iou_guidance1.0": 0.41346800327301025,
+          "flow_unconditioned_iou": 0.16100063920021057
+        },
+        {
+          "building": "00e1277c993e9161b298aad78e8a1ad9febd74be769118d8806bb4add42610e8",
+          "split": "val",
+          "point_evidence_iou": 0.4628647267818451,
+          "vae_ceiling_iou": 0.6194539070129395,
+          "flow_iou": 0.46904024481773376,
+          "flow_iou_guidance1.0": 0.46904024481773376,
+          "flow_unconditioned_iou": 0.09806201606988907
+        },
+        {
+          "building": "010c67a79a149d3d289387dbc84cf734d0b3684644f7601cfcca854b52107913",
+          "split": "val",
+          "point_evidence_iou": 0.4146341383457184,
+          "vae_ceiling_iou": 0.7549747824668884,
+          "flow_iou": 0.5082370042800903,
+          "flow_iou_guidance1.0": 0.5082370042800903,
+          "flow_unconditioned_iou": 0.21705776453018188
+        },
+        {
+          "building": "012654c9da950cdd",
+          "split": "val",
+          "point_evidence_iou": 0.5664403438568115,
+          "vae_ceiling_iou": 0.8463476300239563,
+          "flow_iou": 0.6136842370033264,
+          "flow_iou_guidance1.0": 0.6136842370033264,
+          "flow_unconditioned_iou": 0.152078777551651
+        },
+        {
+          "building": "01363eef29a75c3d",
+          "split": "val",
+          "point_evidence_iou": 0.45284897089004517,
+          "vae_ceiling_iou": 0.8562300205230713,
+          "flow_iou": 0.4113801419734955,
+          "flow_iou_guidance1.0": 0.4113801419734955,
+          "flow_unconditioned_iou": 0.2145879566669464
+        },
+        {
+          "building": "0138e16415c42536",
+          "split": "val",
+          "point_evidence_iou": 0.3007633686065674,
+          "vae_ceiling_iou": 0.9138942956924438,
+          "flow_iou": 0.25833332538604736,
+          "flow_iou_guidance1.0": 0.25833332538604736,
+          "flow_unconditioned_iou": 0.07557706534862518
+        }
+      ]
+    },
+    {
+      "step": 16200,
+      "mse": 0.6442382994294167,
+      "lr": 6.47020162616152e-05,
+      "elapsed_min": 150.7,
+      "peak_gpu_gb": 2.76
+    },
+    {
+      "step": 16400,
+      "mse": 0.6006800317019224,
+      "lr": 6.394955530196147e-05,
+      "elapsed_min": 152.1,
+      "peak_gpu_gb": 2.75
+    },
+    {
+      "step": 16600,
+      "mse": 0.6152177701890469,
+      "lr": 6.319365249826865e-05,
+      "elapsed_min": 153.5,
+      "peak_gpu_gb": 2.75
+    },
+    {
+      "step": 16800,
+      "mse": 0.5860660185664892,
+      "lr": 6.243449435824276e-05,
+      "elapsed_min": 155.0,
+      "peak_gpu_gb": 2.75
+    },
+    {
+      "step": 17000,
+      "mse": 0.6008447724580764,
+      "lr": 6.167226819279528e-05,
+      "elapsed_min": 156.4,
+      "peak_gpu_gb": 2.75
+    },
+    {
+      "step": 17200,
+      "mse": 0.5868253248929978,
+      "lr": 6.090716206982714e-05,
+      "elapsed_min": 157.9,
+      "peak_gpu_gb": 2.75
+    },
+    {
+      "step": 17400,
+      "mse": 0.6302686703950167,
+      "lr": 6.0139364767825626e-05,
+      "elapsed_min": 159.4,
+      "peak_gpu_gb": 2.75
+    },
+    {
+      "step": 17600,
+      "mse": 0.6362190636992454,
+      "lr": 5.9369065729286245e-05,
+      "elapsed_min": 160.8,
+      "peak_gpu_gb": 2.75
+    },
+    {
+      "step": 17800,
+      "mse": 0.6383629255741835,
+      "lr": 5.859645501397048e-05,
+      "elapsed_min": 162.2,
+      "peak_gpu_gb": 2.75
+    },
+    {
+      "step": 18000,
+      "mse": 0.6201374706625938,
+      "lr": 5.782172325201155e-05,
+      "elapsed_min": 163.6,
+      "peak_gpu_gb": 2.75,
+      "fit_train_iou": 0.6229009926319122,
+      "fit_val_iou": 0.4992541968822479,
+      "probe": {
+        "train": [
+          {
+            "building": "00041ebfddbfae9160abe2984d904ae9731dcc3aa1c605ca89ed2ce00da73a89",
+            "split": "train",
+            "point_evidence_iou": 0.486797571182251,
+            "vae_ceiling_iou": 0.8889802694320679,
+            "flow_iou": 0.8204711675643921,
+            "flow_unconditioned_iou": 0.18806509673595428
+          },
+          {
+            "building": "000614f93dc994c6",
+            "split": "train",
+            "point_evidence_iou": 0.5159235596656799,
+            "vae_ceiling_iou": 0.7406483888626099,
+            "flow_iou": 0.4253308176994324,
+            "flow_unconditioned_iou": 0.030889621004462242
+          }
+        ],
+        "val": [
+          {
+            "building": "005e92b88e06f59c4a23d76b1a7db0259a0c1f721fcdc782d5152a828604f121",
+            "split": "val",
+            "point_evidence_iou": 0.21992221474647522,
+            "vae_ceiling_iou": 0.8798326253890991,
+            "flow_iou": 0.3301199674606323,
+            "flow_unconditioned_iou": 0.04292881116271019
+          },
+          {
+            "building": "00b6b0f42dac7a1f",
+            "split": "val",
+            "point_evidence_iou": 0.5236051678657532,
+            "vae_ceiling_iou": 0.8367117047309875,
+            "flow_iou": 0.6683884263038635,
+            "flow_unconditioned_iou": 0.16456693410873413
+          }
+        ]
+      },
+      "probe_peak_gpu_gb": 6.22
+    },
+    {
+      "step": 18200,
+      "mse": 0.6136816096305847,
+      "lr": 5.7045061596879134e-05,
+      "elapsed_min": 166.5,
+      "peak_gpu_gb": 2.75
+    },
+    {
+      "step": 18400,
+      "mse": 0.5907370571792125,
+      "lr": 5.6266661678215216e-05,
+      "elapsed_min": 168.0,
+      "peak_gpu_gb": 2.75
+    },
+    {
+      "step": 18600,
+      "mse": 0.6268609831482173,
+      "lr": 5.548671555455226e-05,
+      "elapsed_min": 169.4,
+      "peak_gpu_gb": 2.75
+    },
+    {
+      "step": 18800,
+      "mse": 0.6130231133848428,
+      "lr": 5.470541566592573e-05,
+      "elapsed_min": 170.8,
+      "peak_gpu_gb": 2.75
+    },
+    {
+      "step": 19000,
+      "mse": 0.6132799339294434,
+      "lr": 5.392295478639225e-05,
+      "elapsed_min": 172.2,
+      "peak_gpu_gb": 2.75
+    },
+    {
+      "step": 19200,
+      "mse": 0.5748610562086105,
+      "lr": 5.313952597646568e-05,
+      "elapsed_min": 173.8,
+      "peak_gpu_gb": 2.75
+    },
+    {
+      "step": 19400,
+      "mse": 0.6389820058643818,
+      "lr": 5.235532253548213e-05,
+      "elapsed_min": 175.2,
+      "peak_gpu_gb": 2.75
+    },
+    {
+      "step": 19600,
+      "mse": 0.5884222273528575,
+      "lr": 5.157053795390642e-05,
+      "elapsed_min": 176.6,
+      "peak_gpu_gb": 2.75
+    },
+    {
+      "step": 19800,
+      "mse": 0.5644721046835184,
+      "lr": 5.078536586559104e-05,
+      "elapsed_min": 178.0,
+      "peak_gpu_gb": 2.75
+    },
+    {
+      "step": 20000,
+      "mse": 0.5787371787428855,
+      "lr": 5e-05,
+      "elapsed_min": 179.5,
+      "peak_gpu_gb": 2.75,
+      "validation": [
+        {
+          "building": "005e92b88e06f59c4a23d76b1a7db0259a0c1f721fcdc782d5152a828604f121",
+          "split": "val",
+          "point_evidence_iou": 0.21992221474647522,
+          "vae_ceiling_iou": 0.8798326253890991,
+          "flow_iou": 0.3347701132297516,
+          "flow_iou_guidance1.0": 0.3347701132297516,
+          "flow_unconditioned_iou": 0.030775051563978195
+        },
+        {
+          "building": "00b6b0f42dac7a1f",
+          "split": "val",
+          "point_evidence_iou": 0.5236051678657532,
+          "vae_ceiling_iou": 0.8367117047309875,
+          "flow_iou": 0.652445375919342,
+          "flow_iou_guidance1.0": 0.652445375919342,
+          "flow_unconditioned_iou": 0.15848752856254578
+        },
+        {
+          "building": "00dad95bfdf03a21",
+          "split": "val",
+          "point_evidence_iou": 0.44260281324386597,
+          "vae_ceiling_iou": 0.8149276375770569,
+          "flow_iou": 0.3824117183685303,
+          "flow_iou_guidance1.0": 0.3824117183685303,
+          "flow_unconditioned_iou": 0.16201716661453247
+        },
+        {
+          "building": "00e1277c993e9161b298aad78e8a1ad9febd74be769118d8806bb4add42610e8",
+          "split": "val",
+          "point_evidence_iou": 0.4628647267818451,
+          "vae_ceiling_iou": 0.6194539070129395,
+          "flow_iou": 0.46406251192092896,
+          "flow_iou_guidance1.0": 0.46406251192092896,
+          "flow_unconditioned_iou": 0.09422222524881363
+        },
+        {
+          "building": "010c67a79a149d3d289387dbc84cf734d0b3684644f7601cfcca854b52107913",
+          "split": "val",
+          "point_evidence_iou": 0.4146341383457184,
+          "vae_ceiling_iou": 0.7549747824668884,
+          "flow_iou": 0.49753329157829285,
+          "flow_iou_guidance1.0": 0.49753329157829285,
+          "flow_unconditioned_iou": 0.19538314640522003
+        },
+        {
+          "building": "012654c9da950cdd",
+          "split": "val",
+          "point_evidence_iou": 0.5664403438568115,
+          "vae_ceiling_iou": 0.8463476300239563,
+          "flow_iou": 0.6137565970420837,
+          "flow_iou_guidance1.0": 0.6137565970420837,
+          "flow_unconditioned_iou": 0.15540820360183716
+        },
+        {
+          "building": "01363eef29a75c3d",
+          "split": "val",
+          "point_evidence_iou": 0.45284897089004517,
+          "vae_ceiling_iou": 0.8562300205230713,
+          "flow_iou": 0.4049244225025177,
+          "flow_iou_guidance1.0": 0.4049244225025177,
+          "flow_unconditioned_iou": 0.1844639927148819
+        },
+        {
+          "building": "0138e16415c42536",
+          "split": "val",
+          "point_evidence_iou": 0.3007633686065674,
+          "vae_ceiling_iou": 0.9138942956924438,
+          "flow_iou": 0.25879043340682983,
+          "flow_iou_guidance1.0": 0.25879043340682983,
+          "flow_unconditioned_iou": 0.0797598659992218
+        }
+      ]
+    },
+    {
+      "step": 20200,
+      "mse": 0.6204603321105242,
+      "lr": 4.921463413440898e-05,
+      "elapsed_min": 186.8,
+      "peak_gpu_gb": 2.75
+    },
+    {
+      "step": 20400,
+      "mse": 0.5767987534403801,
+      "lr": 4.8429462046093585e-05,
+      "elapsed_min": 188.2,
+      "peak_gpu_gb": 2.75
+    },
+    {
+      "step": 20600,
+      "mse": 0.546902569681406,
+      "lr": 4.7644677464517874e-05,
+      "elapsed_min": 189.6,
+      "peak_gpu_gb": 2.75
+    },
+    {
+      "step": 20800,
+      "mse": 0.5654284339398146,
+      "lr": 4.6860474023534335e-05,
+      "elapsed_min": 191.0,
+      "peak_gpu_gb": 2.75
+    },
+    {
+      "step": 21000,
+      "mse": 0.5909898643940688,
+      "lr": 4.607704521360776e-05,
+      "elapsed_min": 192.4,
+      "peak_gpu_gb": 2.75,
+      "fit_train_iou": 0.6677221357822418,
+      "fit_val_iou": 0.5009596198797226,
+      "probe": {
+        "train": [
+          {
+            "building": "00041ebfddbfae9160abe2984d904ae9731dcc3aa1c605ca89ed2ce00da73a89",
+            "split": "train",
+            "point_evidence_iou": 0.486797571182251,
+            "vae_ceiling_iou": 0.8889802694320679,
+            "flow_iou": 0.8325203061103821,
+            "flow_unconditioned_iou": 0.18577729165554047
+          },
+          {
+            "building": "000614f93dc994c6",
+            "split": "train",
+            "point_evidence_iou": 0.5159235596656799,
+            "vae_ceiling_iou": 0.7406483888626099,
+            "flow_iou": 0.5029239654541016,
+            "flow_unconditioned_iou": 0.04482042044401169
+          }
+        ],
+        "val": [
+          {
+            "building": "005e92b88e06f59c4a23d76b1a7db0259a0c1f721fcdc782d5152a828604f121",
+            "split": "val",
+            "point_evidence_iou": 0.21992221474647522,
+            "vae_ceiling_iou": 0.8798326253890991,
+            "flow_iou": 0.3390680253505707,
+            "flow_unconditioned_iou": 0.0623781681060791
+          },
+          {
+            "building": "00b6b0f42dac7a1f",
+            "split": "val",
+            "point_evidence_iou": 0.5236051678657532,
+            "vae_ceiling_iou": 0.8367117047309875,
+            "flow_iou": 0.6628512144088745,
+            "flow_unconditioned_iou": 0.17015013098716736
+          }
+        ]
+      },
+      "probe_peak_gpu_gb": 6.23
+    },
+    {
+      "step": 21200,
+      "mse": 0.5889592059701682,
+      "lr": 4.529458433407429e-05,
+      "elapsed_min": 195.4,
+      "peak_gpu_gb": 2.75
+    },
+    {
+      "step": 21400,
+      "mse": 0.6327928649634122,
+      "lr": 4.451328444544774e-05,
+      "elapsed_min": 196.8,
+      "peak_gpu_gb": 2.75
+    },
+    {
+      "step": 21600,
+      "mse": 0.6167014859616756,
+      "lr": 4.373333832178478e-05,
+      "elapsed_min": 198.2,
+      "peak_gpu_gb": 2.75
+    },
+    {
+      "step": 21800,
+      "mse": 0.5743674352020025,
+      "lr": 4.295493840312087e-05,
+      "elapsed_min": 199.6,
+      "peak_gpu_gb": 2.75
+    },
+    {
+      "step": 22000,
+      "mse": 0.5582493661344051,
+      "lr": 4.2178276747988446e-05,
+      "elapsed_min": 201.0,
+      "peak_gpu_gb": 2.75
+    },
+    {
+      "step": 22200,
+      "mse": 0.6055069410055876,
+      "lr": 4.140354498602952e-05,
+      "elapsed_min": 202.6,
+      "peak_gpu_gb": 2.75
+    },
+    {
+      "step": 22400,
+      "mse": 0.5864437519013882,
+      "lr": 4.063093427071376e-05,
+      "elapsed_min": 204.0,
+      "peak_gpu_gb": 2.75
+    },
+    {
+      "step": 22600,
+      "mse": 0.5825985914468765,
+      "lr": 3.986063523217439e-05,
+      "elapsed_min": 205.4,
+      "peak_gpu_gb": 2.75
+    },
+    {
+      "step": 22800,
+      "mse": 0.578062545210123,
+      "lr": 3.9092837930172884e-05,
+      "elapsed_min": 206.8,
+      "peak_gpu_gb": 2.75
+    },
+    {
+      "step": 23000,
+      "mse": 0.5936583041399718,
+      "lr": 3.832773180720475e-05,
+      "elapsed_min": 208.3,
+      "peak_gpu_gb": 2.75
+    },
+    {
+      "step": 23200,
+      "mse": 0.5946963665634394,
+      "lr": 3.756550564175727e-05,
+      "elapsed_min": 209.8,
+      "peak_gpu_gb": 2.75
+    },
+    {
+      "step": 23400,
+      "mse": 0.593379830867052,
+      "lr": 3.680634750173137e-05,
+      "elapsed_min": 211.2,
+      "peak_gpu_gb": 2.75
+    },
+    {
+      "step": 23600,
+      "mse": 0.5805602400004863,
+      "lr": 3.605044469803854e-05,
+      "elapsed_min": 212.7,
+      "peak_gpu_gb": 2.75
+    },
+    {
+      "step": 23800,
+      "mse": 0.597260290235281,
+      "lr": 3.529798373838481e-05,
+      "elapsed_min": 214.1,
+      "peak_gpu_gb": 2.75
+    },
+    {
+      "step": 24000,
+      "mse": 0.5677985253743827,
+      "lr": 3.4549150281252636e-05,
+      "elapsed_min": 215.5,
+      "peak_gpu_gb": 2.75,
+      "fit_train_iou": 0.6552269756793976,
+      "fit_val_iou": 0.49861669540405273,
+      "probe": {
+        "train": [
+          {
+            "building": "00041ebfddbfae9160abe2984d904ae9731dcc3aa1c605ca89ed2ce00da73a89",
+            "split": "train",
+            "point_evidence_iou": 0.486797571182251,
+            "vae_ceiling_iou": 0.8889802694320679,
+            "flow_iou": 0.8329258561134338,
+            "flow_unconditioned_iou": 0.14777213335037231
+          },
+          {
+            "building": "000614f93dc994c6",
+            "split": "train",
+            "point_evidence_iou": 0.5159235596656799,
+            "vae_ceiling_iou": 0.7406483888626099,
+            "flow_iou": 0.47752809524536133,
+            "flow_unconditioned_iou": 0.0321892574429512
+          }
+        ],
+        "val": [
+          {
+            "building": "005e92b88e06f59c4a23d76b1a7db0259a0c1f721fcdc782d5152a828604f121",
+            "split": "val",
+            "point_evidence_iou": 0.21992221474647522,
+            "vae_ceiling_iou": 0.8798326253890991,
+            "flow_iou": 0.33823758363723755,
+            "flow_unconditioned_iou": 0.12848933041095734
+          },
+          {
+            "building": "00b6b0f42dac7a1f",
+            "split": "val",
+            "point_evidence_iou": 0.5236051678657532,
+            "vae_ceiling_iou": 0.8367117047309875,
+            "flow_iou": 0.6589958071708679,
+            "flow_unconditioned_iou": 0.12961876392364502
+          }
+        ]
+      },
+      "probe_peak_gpu_gb": 6.23,
+      "validation": [
+        {
+          "building": "005e92b88e06f59c4a23d76b1a7db0259a0c1f721fcdc782d5152a828604f121",
+          "split": "val",
+          "point_evidence_iou": 0.21992221474647522,
+          "vae_ceiling_iou": 0.8798326253890991,
+          "flow_iou": 0.33265870809555054,
+          "flow_iou_guidance1.0": 0.33265870809555054,
+          "flow_unconditioned_iou": 0.12848933041095734
+        },
+        {
+          "building": "00b6b0f42dac7a1f",
+          "split": "val",
+          "point_evidence_iou": 0.5236051678657532,
+          "vae_ceiling_iou": 0.8367117047309875,
+          "flow_iou": 0.6480506062507629,
+          "flow_iou_guidance1.0": 0.6480506062507629,
+          "flow_unconditioned_iou": 0.12961876392364502
+        },
+        {
+          "building": "00dad95bfdf03a21",
+          "split": "val",
+          "point_evidence_iou": 0.44260281324386597,
+          "vae_ceiling_iou": 0.8149276375770569,
+          "flow_iou": 0.36781609058380127,
+          "flow_iou_guidance1.0": 0.36781609058380127,
+          "flow_unconditioned_iou": 0.12089715898036957
+        },
+        {
+          "building": "00e1277c993e9161b298aad78e8a1ad9febd74be769118d8806bb4add42610e8",
+          "split": "val",
+          "point_evidence_iou": 0.4628647267818451,
+          "vae_ceiling_iou": 0.6194539070129395,
+          "flow_iou": 0.4620155096054077,
+          "flow_iou_guidance1.0": 0.4620155096054077,
+          "flow_unconditioned_iou": 0.06285940855741501
+        },
+        {
+          "building": "010c67a79a149d3d289387dbc84cf734d0b3684644f7601cfcca854b52107913",
+          "split": "val",
+          "point_evidence_iou": 0.4146341383457184,
+          "vae_ceiling_iou": 0.7549747824668884,
+          "flow_iou": 0.4924698770046234,
+          "flow_iou_guidance1.0": 0.4924698770046234,
+          "flow_unconditioned_iou": 0.2541165351867676
+        },
+        {
+          "building": "012654c9da950cdd",
+          "split": "val",
+          "point_evidence_iou": 0.5664403438568115,
+          "vae_ceiling_iou": 0.8463476300239563,
+          "flow_iou": 0.6270270347595215,
+          "flow_iou_guidance1.0": 0.6270270347595215,
+          "flow_unconditioned_iou": 0.10687171667814255
+        },
+        {
+          "building": "01363eef29a75c3d",
+          "split": "val",
+          "point_evidence_iou": 0.45284897089004517,
+          "vae_ceiling_iou": 0.8562300205230713,
+          "flow_iou": 0.38817930221557617,
+          "flow_iou_guidance1.0": 0.38817930221557617,
+          "flow_unconditioned_iou": 0.34111928939819336
+        },
+        {
+          "building": "0138e16415c42536",
+          "split": "val",
+          "point_evidence_iou": 0.3007633686065674,
+          "vae_ceiling_iou": 0.9138942956924438,
+          "flow_iou": 0.27324751019477844,
+          "flow_iou_guidance1.0": 0.27324751019477844,
+          "flow_unconditioned_iou": 0.05267249792814255
+        }
+      ]
+    },
+    {
+      "step": 24200,
+      "mse": 0.5916688564792275,
+      "lr": 3.380412909009254e-05,
+      "elapsed_min": 224.2,
+      "peak_gpu_gb": 2.75
+    },
+    {
+      "step": 24400,
+      "mse": 0.6022502922266721,
+      "lr": 3.3063103987735433e-05,
+      "elapsed_min": 225.6,
+      "peak_gpu_gb": 2.75
+    },
+    {
+      "step": 24600,
+      "mse": 0.5424652166664601,
+      "lr": 3.2326257811037155e-05,
+      "elapsed_min": 227.0,
+      "peak_gpu_gb": 2.75
+    },
+    {
+      "step": 24800,
+      "mse": 0.5384530678391457,
+      "lr": 3.1593772365766105e-05,
+      "elapsed_min": 228.4,
+      "peak_gpu_gb": 2.75
+    },
+    {
+      "step": 25000,
+      "mse": 0.5502434764057398,
+      "lr": 3.086582838174551e-05,
+      "elapsed_min": 229.8,
+      "peak_gpu_gb": 2.75
+    },
+    {
+      "step": 25200,
+      "mse": 0.5746371648460626,
+      "lr": 3.0142605468260978e-05,
+      "elapsed_min": 231.4,
+      "peak_gpu_gb": 2.75
+    },
+    {
+      "step": 25400,
+      "mse": 0.5629470973461866,
+      "lr": 2.9424282069744564e-05,
+      "elapsed_min": 232.8,
+      "peak_gpu_gb": 2.75
+    },
+    {
+      "step": 25600,
+      "mse": 0.5571277686581015,
+      "lr": 2.8711035421746367e-05,
+      "elapsed_min": 234.2,
+      "peak_gpu_gb": 2.75
+    },
+    {
+      "step": 25800,
+      "mse": 0.5356529084593058,
+      "lr": 2.8003041507204242e-05,
+      "elapsed_min": 235.7,
+      "peak_gpu_gb": 2.75
+    },
+    {
+      "step": 26000,
+      "mse": 0.5518775324523449,
+      "lr": 2.7300475013022663e-05,
+      "elapsed_min": 237.1,
+      "peak_gpu_gb": 2.75
+    },
+    {
+      "step": 26200,
+      "mse": 0.5748606576025486,
+      "lr": 2.660350928697134e-05,
+      "elapsed_min": 238.6,
+      "peak_gpu_gb": 2.75
+    },
+    {
+      "step": 26400,
+      "mse": 0.5743268306553364,
+      "lr": 2.591231629491423e-05,
+      "elapsed_min": 240.1,
+      "peak_gpu_gb": 2.75
+    },
+    {
+      "step": 26600,
+      "mse": 0.578975467607379,
+      "lr": 2.522706657837962e-05,
+      "elapsed_min": 241.5,
+      "peak_gpu_gb": 2.75
+    },
+    {
+      "step": 26800,
+      "mse": 0.5576327671483159,
+      "lr": 2.4547929212481435e-05,
+      "elapsed_min": 242.9,
+      "peak_gpu_gb": 2.75
+    },
+    {
+      "step": 27000,
+      "mse": 0.5374458300322295,
+      "lr": 2.3875071764202563e-05,
+      "elapsed_min": 244.3,
+      "peak_gpu_gb": 2.75,
+      "fit_train_iou": 0.6704557836055756,
+      "fit_val_iou": 0.4913228154182434,
+      "probe": {
+        "train": [
+          {
+            "building": "00041ebfddbfae9160abe2984d904ae9731dcc3aa1c605ca89ed2ce00da73a89",
+            "split": "train",
+            "point_evidence_iou": 0.486797571182251,
+            "vae_ceiling_iou": 0.8889802694320679,
+            "flow_iou": 0.8371521830558777,
+            "flow_unconditioned_iou": 0.1402186155319214
+          },
+          {
+            "building": "000614f93dc994c6",
+            "split": "train",
+            "point_evidence_iou": 0.5159235596656799,
+            "vae_ceiling_iou": 0.7406483888626099,
+            "flow_iou": 0.5037593841552734,
+            "flow_unconditioned_iou": 0.031121550127863884
+          }
+        ],
+        "val": [
+          {
+            "building": "005e92b88e06f59c4a23d76b1a7db0259a0c1f721fcdc782d5152a828604f121",
+            "split": "val",
+            "point_evidence_iou": 0.21992221474647522,
+            "vae_ceiling_iou": 0.8798326253890991,
+            "flow_iou": 0.3274015784263611,
+            "flow_unconditioned_iou": 0.13780835270881653
+          },
+          {
+            "building": "00b6b0f42dac7a1f",
+            "split": "val",
+            "point_evidence_iou": 0.5236051678657532,
+            "vae_ceiling_iou": 0.8367117047309875,
+            "flow_iou": 0.6552440524101257,
+            "flow_unconditioned_iou": 0.12812931835651398
+          }
+        ]
+      },
+      "probe_peak_gpu_gb": 6.23
+    },
+    {
+      "step": 27200,
+      "mse": 0.5928462567925453,
+      "lr": 2.3208660251050158e-05,
+      "elapsed_min": 247.2,
+      "peak_gpu_gb": 2.75
+    },
+    {
+      "step": 27400,
+      "mse": 0.5501259882748127,
+      "lr": 2.2548859100093407e-05,
+      "elapsed_min": 248.7,
+      "peak_gpu_gb": 2.75
+    },
+    {
+      "step": 27600,
+      "mse": 0.5532321360707283,
+      "lr": 2.1895831107393484e-05,
+      "elapsed_min": 250.1,
+      "peak_gpu_gb": 2.75
+    },
+    {
+      "step": 27800,
+      "mse": 0.6210027045756579,
+      "lr": 2.124973739783609e-05,
+      "elapsed_min": 251.5,
+      "peak_gpu_gb": 2.75
+    },
+    {
+      "step": 28000,
+      "mse": 0.545464314892888,
+      "lr": 2.061073738537635e-05,
+      "elapsed_min": 252.9,
+      "peak_gpu_gb": 2.75,
+      "validation": [
+        {
+          "building": "005e92b88e06f59c4a23d76b1a7db0259a0c1f721fcdc782d5152a828604f121",
+          "split": "val",
+          "point_evidence_iou": 0.21992221474647522,
+          "vae_ceiling_iou": 0.8798326253890991,
+          "flow_iou": 0.31837132573127747,
+          "flow_iou_guidance1.0": 0.31837132573127747,
+          "flow_unconditioned_iou": 0.12849028408527374
+        },
+        {
+          "building": "00b6b0f42dac7a1f",
+          "split": "val",
+          "point_evidence_iou": 0.5236051678657532,
+          "vae_ceiling_iou": 0.8367117047309875,
+          "flow_iou": 0.6385416388511658,
+          "flow_iou_guidance1.0": 0.6385416388511658,
+          "flow_unconditioned_iou": 0.1344379186630249
+        },
+        {
+          "building": "00dad95bfdf03a21",
+          "split": "val",
+          "point_evidence_iou": 0.44260281324386597,
+          "vae_ceiling_iou": 0.8149276375770569,
+          "flow_iou": 0.3761904835700989,
+          "flow_iou_guidance1.0": 0.3761904835700989,
+          "flow_unconditioned_iou": 0.1197674423456192
+        },
+        {
+          "building": "00e1277c993e9161b298aad78e8a1ad9febd74be769118d8806bb4add42610e8",
+          "split": "val",
+          "point_evidence_iou": 0.4628647267818451,
+          "vae_ceiling_iou": 0.6194539070129395,
+          "flow_iou": 0.4628483057022095,
+          "flow_iou_guidance1.0": 0.4628483057022095,
+          "flow_unconditioned_iou": 0.06281942129135132
+        },
+        {
+          "building": "010c67a79a149d3d289387dbc84cf734d0b3684644f7601cfcca854b52107913",
+          "split": "val",
+          "point_evidence_iou": 0.4146341383457184,
+          "vae_ceiling_iou": 0.7549747824668884,
+          "flow_iou": 0.506562352180481,
+          "flow_iou_guidance1.0": 0.506562352180481,
+          "flow_unconditioned_iou": 0.24333223700523376
+        },
+        {
+          "building": "012654c9da950cdd",
+          "split": "val",
+          "point_evidence_iou": 0.5664403438568115,
+          "vae_ceiling_iou": 0.8463476300239563,
+          "flow_iou": 0.6205787658691406,
+          "flow_iou_guidance1.0": 0.6205787658691406,
+          "flow_unconditioned_iou": 0.10932610183954239
+        },
+        {
+          "building": "01363eef29a75c3d",
+          "split": "val",
+          "point_evidence_iou": 0.45284897089004517,
+          "vae_ceiling_iou": 0.8562300205230713,
+          "flow_iou": 0.3840993642807007,
+          "flow_iou_guidance1.0": 0.3840993642807007,
+          "flow_unconditioned_iou": 0.3388943374156952
+        },
+        {
+          "building": "0138e16415c42536",
+          "split": "val",
+          "point_evidence_iou": 0.3007633686065674,
+          "vae_ceiling_iou": 0.9138942956924438,
+          "flow_iou": 0.29088276624679565,
+          "flow_iou_guidance1.0": 0.29088276624679565,
+          "flow_unconditioned_iou": 0.0532136894762516
+        }
+      ]
+    },
+    {
+      "step": 28200,
+      "mse": 0.5663344685733318,
+      "lr": 1.9978988733705807e-05,
+      "elapsed_min": 260.2,
+      "peak_gpu_gb": 2.76
+    },
+    {
+      "step": 28400,
+      "mse": 0.5829549059271812,
+      "lr": 1.9354647317351188e-05,
+      "elapsed_min": 261.6,
+      "peak_gpu_gb": 2.76
+    },
+    {
+      "step": 28600,
+      "mse": 0.5552901241183281,
+      "lr": 1.8737867183214757e-05,
+      "elapsed_min": 263.1,
+      "peak_gpu_gb": 2.76
+    },
+    {
+      "step": 28800,
+      "mse": 0.5448892131447792,
+      "lr": 1.8128800512565513e-05,
+      "elapsed_min": 264.5,
+      "peak_gpu_gb": 2.76
+    },
+    {
+      "step": 29000,
+      "mse": 0.5431381081044674,
+      "lr": 1.7527597583490822e-05,
+      "elapsed_min": 265.9,
+      "peak_gpu_gb": 2.76
+    },
+    {
+      "step": 29200,
+      "mse": 0.5709869114309549,
+      "lr": 1.6934406733817414e-05,
+      "elapsed_min": 267.5,
+      "peak_gpu_gb": 2.76
+    },
+    {
+      "step": 29400,
+      "mse": 0.5596649897098541,
+      "lr": 1.6349374324511345e-05,
+      "elapsed_min": 268.9,
+      "peak_gpu_gb": 2.76
+    },
+    {
+      "step": 29600,
+      "mse": 0.5630121050775051,
+      "lr": 1.5772644703565565e-05,
+      "elapsed_min": 270.3,
+      "peak_gpu_gb": 2.76
+    },
+    {
+      "step": 29800,
+      "mse": 0.5354230415076018,
+      "lr": 1.5204360170384286e-05,
+      "elapsed_min": 271.7,
+      "peak_gpu_gb": 2.76
+    },
+    {
+      "step": 30000,
+      "mse": 0.5234861385822296,
+      "lr": 1.4644660940672627e-05,
+      "elapsed_min": 273.1,
+      "peak_gpu_gb": 2.76,
+      "fit_train_iou": 0.6935020089149475,
+      "fit_val_iou": 0.48723334074020386,
+      "probe": {
+        "train": [
+          {
+            "building": "00041ebfddbfae9160abe2984d904ae9731dcc3aa1c605ca89ed2ce00da73a89",
+            "split": "train",
+            "point_evidence_iou": 0.486797571182251,
+            "vae_ceiling_iou": 0.8889802694320679,
+            "flow_iou": 0.828009843826294,
+            "flow_unconditioned_iou": 0.1336420774459839
+          },
+          {
+            "building": "000614f93dc994c6",
+            "split": "train",
+            "point_evidence_iou": 0.5159235596656799,
+            "vae_ceiling_iou": 0.7406483888626099,
+            "flow_iou": 0.5589941740036011,
+            "flow_unconditioned_iou": 0.028281116858124733
+          }
+        ],
+        "val": [
+          {
+            "building": "005e92b88e06f59c4a23d76b1a7db0259a0c1f721fcdc782d5152a828604f121",
+            "split": "val",
+            "point_evidence_iou": 0.21992221474647522,
+            "vae_ceiling_iou": 0.8798326253890991,
+            "flow_iou": 0.3237888813018799,
+            "flow_unconditioned_iou": 0.16090819239616394
+          },
+          {
+            "building": "00b6b0f42dac7a1f",
+            "split": "val",
+            "point_evidence_iou": 0.5236051678657532,
+            "vae_ceiling_iou": 0.8367117047309875,
+            "flow_iou": 0.6506778001785278,
+            "flow_unconditioned_iou": 0.11515462398529053
+          }
+        ]
+      },
+      "probe_peak_gpu_gb": 6.22
+    },
+    {
+      "step": 30200,
+      "mse": 0.5824423153698445,
+      "lr": 1.4093685111840566e-05,
+      "elapsed_min": 276.1,
+      "peak_gpu_gb": 2.76
+    },
+    {
+      "step": 30400,
+      "mse": 0.564397009536624,
+      "lr": 1.3551568628929434e-05,
+      "elapsed_min": 277.5,
+      "peak_gpu_gb": 2.75
+    },
+    {
+      "step": 30600,
+      "mse": 0.5494548413157463,
+      "lr": 1.301844525106951e-05,
+      "elapsed_min": 278.9,
+      "peak_gpu_gb": 2.75
+    },
+    {
+      "step": 30800,
+      "mse": 0.5306437943875789,
+      "lr": 1.2494446518477022e-05,
+      "elapsed_min": 280.3,
+      "peak_gpu_gb": 2.75
+    },
+    {
+      "step": 31000,
+      "mse": 0.5418146386742592,
+      "lr": 1.1979701719998453e-05,
+      "elapsed_min": 281.8,
+      "peak_gpu_gb": 2.75
+    },
+    {
+      "step": 31200,
+      "mse": 0.5524439946562052,
+      "lr": 1.1474337861210543e-05,
+      "elapsed_min": 283.3,
+      "peak_gpu_gb": 2.75
+    },
+    {
+      "step": 31400,
+      "mse": 0.5804573409259319,
+      "lr": 1.097847963308351e-05,
+      "elapsed_min": 284.7,
+      "peak_gpu_gb": 2.75
+    },
+    {
+      "step": 31600,
+      "mse": 0.5226742043346166,
+      "lr": 1.049224938121548e-05,
+      "elapsed_min": 286.2,
+      "peak_gpu_gb": 2.75
+    },
+    {
+      "step": 31800,
+      "mse": 0.5220878968387842,
+      "lr": 1.0015767075645471e-05,
+      "elapsed_min": 287.6,
+      "peak_gpu_gb": 2.75
+    },
+    {
+      "step": 32000,
+      "mse": 0.5479345417767764,
+      "lr": 9.549150281252633e-06,
+      "elapsed_min": 289.0,
+      "peak_gpu_gb": 2.75,
+      "validation": [
+        {
+          "building": "005e92b88e06f59c4a23d76b1a7db0259a0c1f721fcdc782d5152a828604f121",
+          "split": "val",
+          "point_evidence_iou": 0.21992221474647522,
+          "vae_ceiling_iou": 0.8798326253890991,
+          "flow_iou": 0.3198946416378021,
+          "flow_iou_guidance1.0": 0.3198946416378021,
+          "flow_unconditioned_iou": 0.15803168714046478
+        },
+        {
+          "building": "00b6b0f42dac7a1f",
+          "split": "val",
+          "point_evidence_iou": 0.5236051678657532,
+          "vae_ceiling_iou": 0.8367117047309875,
+          "flow_iou": 0.6496350169181824,
+          "flow_iou_guidance1.0": 0.6496350169181824,
+          "flow_unconditioned_iou": 0.11579663306474686
+        },
+        {
+          "building": "00dad95bfdf03a21",
+          "split": "val",
+          "point_evidence_iou": 0.44260281324386597,
+          "vae_ceiling_iou": 0.8149276375770569,
+          "flow_iou": 0.37474679946899414,
+          "flow_iou_guidance1.0": 0.37474679946899414,
+          "flow_unconditioned_iou": 0.11055920273065567
+        },
+        {
+          "building": "00e1277c993e9161b298aad78e8a1ad9febd74be769118d8806bb4add42610e8",
+          "split": "val",
+          "point_evidence_iou": 0.4628647267818451,
+          "vae_ceiling_iou": 0.6194539070129395,
+          "flow_iou": 0.45288753509521484,
+          "flow_iou_guidance1.0": 0.45288753509521484,
+          "flow_unconditioned_iou": 0.055851519107818604
+        },
+        {
+          "building": "010c67a79a149d3d289387dbc84cf734d0b3684644f7601cfcca854b52107913",
+          "split": "val",
+          "point_evidence_iou": 0.4146341383457184,
+          "vae_ceiling_iou": 0.7549747824668884,
+          "flow_iou": 0.49699848890304565,
+          "flow_iou_guidance1.0": 0.49699848890304565,
+          "flow_unconditioned_iou": 0.25053870677948
+        },
+        {
+          "building": "012654c9da950cdd",
+          "split": "val",
+          "point_evidence_iou": 0.5664403438568115,
+          "vae_ceiling_iou": 0.8463476300239563,
+          "flow_iou": 0.6194030046463013,
+          "flow_iou_guidance1.0": 0.6194030046463013,
+          "flow_unconditioned_iou": 0.09531065076589584
+        },
+        {
+          "building": "01363eef29a75c3d",
+          "split": "val",
+          "point_evidence_iou": 0.45284897089004517,
+          "vae_ceiling_iou": 0.8562300205230713,
+          "flow_iou": 0.37049999833106995,
+          "flow_iou_guidance1.0": 0.37049999833106995,
+          "flow_unconditioned_iou": 0.3462591767311096
+        },
+        {
+          "building": "0138e16415c42536",
+          "split": "val",
+          "point_evidence_iou": 0.3007633686065674,
+          "vae_ceiling_iou": 0.9138942956924438,
+          "flow_iou": 0.2863309383392334,
+          "flow_iou_guidance1.0": 0.2863309383392334,
+          "flow_unconditioned_iou": 0.04871447756886482
+        }
+      ]
+    },
+    {
+      "step": 32200,
+      "mse": 0.5374370340257884,
+      "lr": 9.09251412874882e-06,
+      "elapsed_min": 296.3,
+      "peak_gpu_gb": 2.76
+    },
+    {
+      "step": 32400,
+      "mse": 0.5348540598154068,
+      "lr": 8.645971286271904e-06,
+      "elapsed_min": 297.7,
+      "peak_gpu_gb": 2.76
+    },
+    {
+      "step": 32600,
+      "mse": 0.5364078660309315,
+      "lr": 8.209631931586498e-06,
+      "elapsed_min": 299.1,
+      "peak_gpu_gb": 2.76
+    },
+    {
+      "step": 32800,
+      "mse": 0.5171692878007889,
+      "lr": 7.783603724899257e-06,
+      "elapsed_min": 300.6,
+      "peak_gpu_gb": 2.76
+    },
+    {
+      "step": 33000,
+      "mse": 0.5305510788410902,
+      "lr": 7.367991782295391e-06,
+      "elapsed_min": 302.0,
+      "peak_gpu_gb": 2.76,
+      "fit_train_iou": 0.6987649500370026,
+      "fit_val_iou": 0.4885183721780777,
+      "probe": {
+        "train": [
+          {
+            "building": "00041ebfddbfae9160abe2984d904ae9731dcc3aa1c605ca89ed2ce00da73a89",
+            "split": "train",
+            "point_evidence_iou": 0.486797571182251,
+            "vae_ceiling_iou": 0.8889802694320679,
+            "flow_iou": 0.8392124772071838,
+            "flow_unconditioned_iou": 0.13479319214820862
+          },
+          {
+            "building": "000614f93dc994c6",
+            "split": "train",
+            "point_evidence_iou": 0.5159235596656799,
+            "vae_ceiling_iou": 0.7406483888626099,
+            "flow_iou": 0.5583174228668213,
+            "flow_unconditioned_iou": 0.027956988662481308
+          }
+        ],
+        "val": [
+          {
+            "building": "005e92b88e06f59c4a23d76b1a7db0259a0c1f721fcdc782d5152a828604f121",
+            "split": "val",
+            "point_evidence_iou": 0.21992221474647522,
+            "vae_ceiling_iou": 0.8798326253890991,
+            "flow_iou": 0.32635894417762756,
+            "flow_unconditioned_iou": 0.16220273077487946
+          },
+          {
+            "building": "00b6b0f42dac7a1f",
+            "split": "val",
+            "point_evidence_iou": 0.5236051678657532,
+            "vae_ceiling_iou": 0.8367117047309875,
+            "flow_iou": 0.6506778001785278,
+            "flow_unconditioned_iou": 0.1133555918931961
+          }
+        ]
+      },
+      "probe_peak_gpu_gb": 6.23
+    }
+  ],
+  "not_claimed": [
+    "full blockstate output (stage 3 absent)",
+    "HYWorld no-scale deployment",
+    "EMA/best-model selection",
+    "guidance-scale selection on the validation split"
+  ]
+}
