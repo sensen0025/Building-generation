@@ -64,3 +64,7 @@ dist/
 *.pem
 *.key
 *.pub
+
+# ---- v6 evidence: figures and small deliverables referenced by README/v6 docs ----
+!v6/work/*.png
+!v6/work/*.litematic
