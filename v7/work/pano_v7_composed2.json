@@ -1,0 +1,19 @@
+{
+  "render": "/tmp/seed_v7_close2/01638d9b33edf42fcec422fefa7ab73ed5affdb7bed796f91832b402a7a18f7d_view000.png",
+  "eye": [
+    21.2,
+    3.0,
+    21.2
+  ],
+  "target": [
+    0.0,
+    9.0,
+    0.0
+  ],
+  "fov_v": 100.0,
+  "ground_y": 0.0,
+  "building_pixels_fraction": 0.0562,
+  "ground_fraction": 0.5,
+  "seam_mean_abs_diff": 0.0,
+  "note": "analytic equirect from a real render; HY-Pano skipped on purpose"
+}

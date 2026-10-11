@@ -68,3 +68,6 @@ dist/
 # ---- v6 evidence: figures and small deliverables referenced by README/v6 docs ----
 !v6/work/*.png
 !v6/work/*.litematic
+
+!v7/work/*.png
+!v7/work/*.litematic

@@ -1,0 +1,93 @@
+{
+  "ply": "/home/sensen/Desktop/hyworld2_exterior_ref/v7_aligned_pcd.ply",
+  "label": "v7 (building-targeted)",
+  "points": 2000000,
+  "sky_fraction": 0.0251,
+  "blocks_per_unit": 8.0,
+  "ground_blocks": -1.376,
+  "standing_points": 732381,
+  "sectors": 24,
+  "above_1_blocks": 732381,
+  "above_2_blocks": 623811,
+  "above_3_blocks": 569840,
+  "above_5_blocks": 466167,
+  "above_8_blocks": 331461,
+  "column_blocks": 6.0,
+  "tall_columns": 1251,
+  "footprint_columns": 701,
+  "footprint_groups": 18,
+  "footprint_extent_blocks": [
+    34,
+    63
+  ],
+  "footprint_aspect": 1.85,
+  "footprint_fill": 0.327,
+  "building_points": 532134,
+  "azimuth_counts": [
+    20630,
+    36623,
+    34844,
+    24122,
+    23550,
+    24202,
+    29531,
+    48260,
+    17841,
+    4709,
+    1630,
+    125,
+    215,
+    624,
+    1874,
+    29902,
+    66611,
+    64745,
+    36233,
+    21154,
+    11800,
+    9482,
+    10210,
+    13217
+  ],
+  "azimuth_covered_sectors": 23,
+  "azimuth_coverage": 0.9583,
+  "centroid_xz": [
+    -24.927,
+    2.167
+  ],
+  "quadrant_bands": {
+    "E": [
+      84299,
+      51390,
+      21472
+    ],
+    "S": [
+      56572,
+      31255,
+      11260
+    ],
+    "W": [
+      85466,
+      55475,
+      16137
+    ],
+    "N": [
+      54968,
+      30270,
+      12284
+    ]
+  },
+  "quadrant_bands_all_filled": true,
+  "quadrant_bands_min": 11260,
+  "occupied_cells": 10650,
+  "components": 39,
+  "largest_component_share": 0.9845,
+  "building_height_blocks": 39.75,
+  "building_span_blocks": [
+    33.3,
+    38.7,
+    62.5
+  ],
+  "scene_span_blocks": 110.2,
+  "building_ratio": 0.3607
+}
