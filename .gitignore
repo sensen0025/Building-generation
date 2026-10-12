@@ -71,3 +71,6 @@ dist/
 
 !v7/work/*.png
 !v7/work/*.litematic
+
+!v8/work/*.png
+!v8/work/*.litematic
