@@ -1,0 +1,55 @@
+{
+  "schema": "tripo-surface-experiment-v1",
+  "source_glb": "/home/sensen/Desktop/我的世界中世纪酒馆3d模型_3e2182ec/tripo_pbr_model_1bff69dd-76a9-42f1-b2c1-fd96e47c91f1_meshopt.glb",
+  "source_origin": "TripoAI text_to_model, NOT this repository pipeline",
+  "triangles": 1817210,
+  "texture_size": [
+    4096,
+    4096
+  ],
+  "surface_samples": 600000,
+  "sampling": "area-weighted over the entire mesh surface including hidden/internal faces; not a ray scan, not camera visibility, not a manifoldness proof",
+  "blocks_per_gltf_unit": 48.91354646100261,
+  "longest_side_blocks": 48,
+  "scale_note": "chosen non-metric mapping, not a recovered physical size",
+  "source_bounds_gltf": [
+    [
+      -0.440093994140625,
+      -0.48876953125,
+      -0.490081787109375
+    ],
+    [
+      0.43963623046875,
+      0.489410400390625,
+      0.491241455078125
+    ]
+  ],
+  "evidence_cells": 13507,
+  "evidence_window": [
+    54,
+    54,
+    54
+  ],
+  "generated_cells": 11281,
+  "cropped_shape_xyz": [
+    45,
+    48,
+    47
+  ],
+  "palette_size": 142,
+  "roundtrip_exact": true,
+  "checkpoint_flow": "/run/media/sensen/Data1/minecraft/AI_3D_World_Repos/outputs/cloudbuild/trellis_flow_occl_xyz_v2/best.pt",
+  "checkpoint_vae": "/run/media/sensen/Data1/minecraft/AI_3D_World_Repos/outputs/cloudbuild/vae_air_repair_stage4/last.pt",
+  "sampling_args": {
+    "steps": 25,
+    "guidance": 1.0,
+    "threshold": 0.5,
+    "seed": 0
+  },
+  "not_claimed": [
+    "no ground-truth blockstates exist here: no IoU, no accuracy, no quality score",
+    "the mesh came from a third-party text-to-3D service, so this is not evidence that this repository text-to-world pipeline works",
+    "single experiment, non-causal: object, sampling, scale and conditioning all differ from v6-v8 runs",
+    "render verdict: roof/wall holes and wrong materials remain -> NOT accepted"
+  ]
+}
